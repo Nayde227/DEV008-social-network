@@ -1,7 +1,7 @@
 import { onNavigate } from "../main.js";
 
 export const home = () => {
-  const homeDiv = document.createElement("div"); // Div padre
+  const homeDiv = document.createElement("div");
   homeDiv.classList.add("buttonHome");
 
   const buttonLogin = document.createElement("button");
@@ -18,11 +18,6 @@ export const home = () => {
 
   homeDiv.appendChild(buttonLogin);
   homeDiv.appendChild(buttonRegister);
-  return homeDiv;
 
-  /*const container = document.querySelector('#container');
-  
-  const divInput = document.createElement('div');
-  divInput.innerHTML= <input type="text" name="name[]" placeholder="Name"required></input>
-  container.appendChild(divInput);/*
+  return homeDiv;
 };

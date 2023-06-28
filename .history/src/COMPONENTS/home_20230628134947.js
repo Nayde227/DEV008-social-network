@@ -20,9 +20,19 @@ export const home = () => {
   homeDiv.appendChild(buttonRegister);
   return homeDiv;
 
-  /*const container = document.querySelector('#container');
+  const container = document.querySelector('#container');
   
   const divInput = document.createElement('div');
   divInput.innerHTML= <input type="text" name="name[]" placeholder="Name"required></input>
-  container.appendChild(divInput);/*
+  container.appendChild(divInput);
+
+
+
+
+
+
+
+
+
+
 };

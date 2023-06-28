@@ -18,11 +18,12 @@ export const home = () => {
 
   homeDiv.appendChild(buttonLogin);
   homeDiv.appendChild(buttonRegister);
+
   return homeDiv;
 
-  /*const container = document.querySelector('#container');
-  
-  const divInput = document.createElement('div');
-  divInput.innerHTML= <input type="text" name="name[]" placeholder="Name"required></input>
-  container.appendChild(divInput);/*
+  const loginDiv = document.createElement("div"); //hijo uno
+
+  const logoGoTravel = document.createElement("img"); //caja para las imagenes
+  logoGoTravel.src = "src\logo.png"; //src es como js identifica las imagenes
+  loginDiv.appendChild(logoGoTravel);
 };

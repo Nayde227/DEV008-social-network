@@ -1,8 +1,8 @@
 import { onNavigate } from "../main.js";
 
 export const home = () => {
-  const homeDiv = document.createElement("div"); // Div padre
-  homeDiv.classList.add("buttonHome");
+  const homeDiv = document.createElement("div");// Div padre
+  homeDiv.classList.add("buttonHome"); 
 
   const buttonLogin = document.createElement("button");
   buttonLogin.classList.add("buttonLog");
@@ -18,11 +18,14 @@ export const home = () => {
 
   homeDiv.appendChild(buttonLogin);
   homeDiv.appendChild(buttonRegister);
+
   return homeDiv;
 
-  /*const container = document.querySelector('#container');
-  
-  const divInput = document.createElement('div');
-  divInput.innerHTML= <input type="text" name="name[]" placeholder="Name"required></input>
-  container.appendChild(divInput);/*
+  const loginDiv = document.createElement("div"); //hijo uno
+
+  const logoGoTravel = document.createElement("img");//caja para las imagenes 
+    logoGoTravel.src = ; //src es como js identifica las imagenes // poster es por que asi estan las imagenes en la data de ghibli 
+    posters.classList.add("soloPosters");  //vinculando con las clases, ejemplo class list //add para añadir
+
+
 };
