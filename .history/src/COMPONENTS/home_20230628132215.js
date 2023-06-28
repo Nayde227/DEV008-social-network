@@ -18,11 +18,14 @@ export const home = () => {
 
   homeDiv.appendChild(buttonLogin);
   homeDiv.appendChild(buttonRegister);
-  return homeDiv;
 
-  /*const container = document.querySelector('#container');
-  
-  const divInput = document.createElement('div');
-  divInput.innerHTML= <input type="text" name="name[]" placeholder="Name"required></input>
-  container.appendChild(divInput);/*
+  return homeDiv;
 };
+
+const logoDiv = document.createElement("div");
+
+const emails = document.createElement("h2");
+emails.textContent = "E-mail";
+emails.classList.add("email");
+logoDiv.appendChild(emails);
+document.getElementById("homeDiv").appendChild(logoDiv);

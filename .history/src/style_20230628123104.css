@@ -1,0 +1,15 @@
+.buttonLog{
+    background-color: rgb(66, 146, 19);
+}
+body{
+   background-image: url(src\assets\viajes.jpg);
+    /*background-color: rgb(69, 42, 165);*/
+}
+
+.buttonHome {
+background-color: blueviolet;
+}
+
+.buttonReg {
+    background-color: aqua;
+}
