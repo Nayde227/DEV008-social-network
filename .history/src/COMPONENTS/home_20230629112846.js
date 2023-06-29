@@ -15,14 +15,12 @@ export const home = (onNavigate) => {
   buttonLogin.textContent = 'Log in';
   buttonForgot.textContent = 'Forgot password';
 
+
+
   const inputEmail = document.createElement('input');
   const inputPassword = document.createElement('input');
   const email = document.createTextNode('E-mail');
   const password = document.createTextNode('Password');
-  const logo = document.createElement('img');
-  logo.src = '../logo.png';
-
-  homeDiv.appendChild(logo);
   homeDiv.appendChild(email);
   homeDiv.appendChild(inputEmail);
   homeDiv.appendChild(password);
@@ -33,7 +31,6 @@ export const home = (onNavigate) => {
 
   buttonLogin.addEventListener('click', () => onNavigate('/login'));
   buttonRegister.addEventListener('click', () => onNavigate('/register'));
-  buttonForgot.addEventListener('click', () => onNavigate('/forgot'));
 
   return homeDiv;
 };

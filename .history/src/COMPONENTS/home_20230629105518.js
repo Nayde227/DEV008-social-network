@@ -7,33 +7,27 @@ export const home = (onNavigate) => {
 
   const buttonRegister = document.createElement('button');
   buttonRegister.classList.add('buttonReg');
- 
-  const buttonForgot = document.createElement('button');
-  buttonForgot.classList.add('buttonFor');
 
   buttonRegister.textContent = 'Sing Up';
   buttonLogin.textContent = 'Log in';
-  buttonForgot.textContent = 'Forgot password';
 
   const inputEmail = document.createElement('input');
-  const inputPassword = document.createElement('input');
-  const email = document.createTextNode('E-mail');
-  const password = document.createTextNode('Password');
-  const logo = document.createElement('img');
-  logo.src = '../logo.png';
+  const inputContraseña = document.createElement('input');
 
-  homeDiv.appendChild(logo);
-  homeDiv.appendChild(email);
-  homeDiv.appendChild(inputEmail);
-  homeDiv.appendChild(password);
-  homeDiv.appendChild(inputPassword);
   homeDiv.appendChild(buttonLogin);
   homeDiv.appendChild(buttonRegister);
-  homeDiv.appendChild(buttonForgot);
+  homeDiv.appendChild(inputEmail);
+  homeDiv.appendChild(inputContraseña);
 
   buttonLogin.addEventListener('click', () => onNavigate('/login'));
   buttonRegister.addEventListener('click', () => onNavigate('/register'));
-  buttonForgot.addEventListener('click', () => onNavigate('/forgot'));
 
   return homeDiv;
+
+  /*const container = document.querySelector('#container');
+  
+  const divInput = document.createElement('div');
+  divInput.innerHTML= <input type="text" name="name[]" placeholder="Name"required></input>
+  container.appendChild(divInput);
+*/
 };
