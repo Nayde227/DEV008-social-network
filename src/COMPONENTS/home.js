@@ -1,6 +1,6 @@
 export const home = (onNavigate) => {
   const homeDiv = document.createElement('div'); // Div padre
-  homeDiv.classList.add('buttonHome');
+  homeDiv.classList.add('home');
 
   const buttonLogin = document.createElement('button');
   buttonLogin.classList.add('buttonLog');
@@ -13,7 +13,7 @@ export const home = (onNavigate) => {
 
   buttonRegister.textContent = 'Sing Up';
   buttonLogin.textContent = 'Log in';
-  buttonForgot.textContent = 'Forgot password';
+  buttonForgot.textContent = 'Forgot password?';
 
   const inputEmail = document.createElement('input');
   const inputPassword = document.createElement('input');
