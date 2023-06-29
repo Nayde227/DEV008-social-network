@@ -16,6 +16,7 @@ export const forgot = (onNavigate) => {
   const emailforgot = document.createElement('Email');
   const inputEmmail = document.createElement('input');
 
+  
   const writePassword = document.createTextNode('Write new password');
   const newPassword = document.createTextNode('New Password');
   const inputNewPassword = document.createElement('input');
