@@ -1,6 +1,4 @@
-import { onNavigate } from "../main.js";
-
-export const home = () => {
+export const home = (onNavigate) => {
   const homeDiv = document.createElement("div"); // Div padre
   homeDiv.classList.add("buttonHome");
 
@@ -13,16 +11,23 @@ export const home = () => {
   buttonRegister.textContent = "Sing Up";
   buttonLogin.textContent = "Log in";
 
-  buttonLogin.addEventListener("click", () => onNavigate("/login"));
-  buttonRegister.addEventListener("click", () => onNavigate("/register"));
+  const inputEmail = document.createElement("input");
+  const inputContraseña = document.createElement("input");
 
   homeDiv.appendChild(buttonLogin);
   homeDiv.appendChild(buttonRegister);
+  homeDiv.appendChild(inputEmail);
+  homeDiv.appendChild(inputContraseña);
+
+  buttonLogin.addEventListener("click", () => onNavigate("/login"));
+  buttonRegister.addEventListener("click", () => onNavigate("/register"));
+
   return homeDiv;
 
   /*const container = document.querySelector('#container');
   
   const divInput = document.createElement('div');
   divInput.innerHTML= <input type="text" name="name[]" placeholder="Name"required></input>
-  container.appendChild(divInput);/*
+  container.appendChild(divInput);
+*/
 };
