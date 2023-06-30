@@ -16,11 +16,14 @@ export const home = (onNavigate) => {
   buttonForgot.textContent = 'Forgot password?';
 
   const inputEmail = document.createElement('input');
+  inputEmail.classList.add('inputHome')
   const inputPassword = document.createElement('input');
+  inputPassword.classList.add('inputHome')
   const email = document.createTextNode('E-mail');
   const password = document.createTextNode('Password');
   const logo = document.createElement('img');
   logo.src = '../logo.png';
+  logo.classList.add('logo');
 
   homeDiv.appendChild(logo);
   homeDiv.appendChild(email);
