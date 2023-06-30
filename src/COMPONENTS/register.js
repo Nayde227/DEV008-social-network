@@ -3,44 +3,58 @@ export const register = (onNavigate) => {
   homeDiv.classList.add('home');
 
   const buttonBack = document.createElement('button');
-  homeDiv.classList.add('buttonBack');
+  buttonBack.classList.add('buttonBack');
 
-  homeDiv.textContent = 'Register Here';
+  /*homeDiv.textContent = 'Register Here';*/
+  const registerHere = document.createElement('h3');
+  registerHere.textContent = 'Register Here';
+  registerHere.classList.add('registerHere');
+
 
   buttonBack.textContent = '< Back';
   buttonBack.addEventListener('click', () => onNavigate('/'));
-  homeDiv.appendChild(buttonBack);
-
-  const inputUser = document.createElement('input');
+  
   const userName = document.createTextNode('Username');
-  const inputName = document.createElement('input');
+  const inputUser = document.createElement('input');
+  inputUser.classList.add('inputRegister');
+  
   const name = document.createTextNode('Name');
-  const inputEmail = document.createElement('input');
-  const inputPassword = document.createElement('input');
+  const inputName = document.createElement('input');
+  inputName.classList.add('inputRegister');
+  
   const email = document.createTextNode('E-mail');
-  const password = document.createTextNode('Password');
+  const inputEmail = document.createElement('input');
+  inputEmail.classList.add('inputRegister');
 
+  const password = document.createTextNode('Password');
+  const inputPassword = document.createElement('input');
+  inputPassword.classList.add('inputRegister')
+  
+  
   const logo = document.createElement('img');
   logo.src = '../logo.png';
-  logo.classList.add('logo');
+  logo.classList.add('logoRegister');
 
   const buttonSingUp = document.createElement('button');
   buttonSingUp.textContent = 'Register';
   buttonSingUp.classList.add('buttonSingUp');
 
-  const terminos = document.createTextNode('By continuing, youagree to GO! Travel Terms of Service and Privacy Policy');
+  /*const terminos = document.createTextNode('By continuing, youagree to GO! Travel Terms of Service and Privacy Policy');
+  */
 
+  homeDiv.appendChild(buttonBack);
   homeDiv.appendChild(logo);
-  homeDiv.appendChild(inputUser);
+  homeDiv.appendChild(registerHere);
   homeDiv.appendChild(userName);
-  homeDiv.appendChild(inputName);
+  homeDiv.appendChild(inputUser);
   homeDiv.appendChild(name);
+  homeDiv.appendChild(inputName);
   homeDiv.appendChild(email);
   homeDiv.appendChild(inputEmail);
   homeDiv.appendChild(password);
   homeDiv.appendChild(inputPassword);
   homeDiv.appendChild(buttonSingUp);
-  homeDiv.appendChild(terminos);
+  /*homeDiv.appendChild(terminos);*/
 
   return homeDiv;
 };
