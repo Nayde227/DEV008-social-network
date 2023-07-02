@@ -99,10 +99,10 @@ En esta sección, se presentan los bocetos de los prototipos, de baja fidelidad 
 ## 4. Prototipos de alta fidelidad
 
 
-![Prototipo de alta calidad de pantalla de inicio escritorio](../DEV008-social-network/src\assets\PA.HomeDesktop.png)
-![Prototipo de alta calidad de pantalla de registro de escritorio](../DEV008-social-network/src\assets\PA.RegisterDesktop.png)
-![Prototipo de alta calidad de pantalla de recuperar contraseña de escritorio](../DEV008-social-network/src\assets\PA.ForgotDesktop.jpg)
-![Prototipo de alta calidad de pantalla de inicio móvil](../DEV008-social-network/src\assets\PA.HomeMóvil.png)
-![Prototipo de alta calidad de pantalla de registro móvil](../DEV008-social-network/src\assets\PA.RegisterMóvil.png)
-![Prototipo de alta calidad de pantalla de recuperar contraseña móvil](../DEV008-social-network/src\assets\PA.ForgotMovil.jpg)
+![Prototipo de alta calidad de pantalla de inicio escritorio](../DEV008-social-network/src/assets/PA.HomeDesktop.png)
+![Prototipo de alta calidad de pantalla de registro de escritorio](../DEV008-social-network/src/assets/PA.RegisterDesktop.png)
+![Prototipo de alta calidad de pantalla de recuperar contraseña de escritorio](../DEV008-social-network/src/assets/PA.ForgotDesktop.jpg)
+![Prototipo de alta calidad de pantalla de inicio móvil](../DEV008-social-network/src/assets/PA.HomeMóvil.png)
+![Prototipo de alta calidad de pantalla de registro móvil](../DEV008-social-network/src/assets/PA.RegisterM%C3%B3vil.png)
+![Prototipo de alta calidad de pantalla de recuperar contraseña móvil](../DEV008-social-network/src/assets/PA.ForgotMovil.jpg)
 
