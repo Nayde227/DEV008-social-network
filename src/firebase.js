@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 // import { getFirestore} from 'firebase/firestore';
 
 const firebaseConfig = {
@@ -13,9 +13,17 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const auth = getAuth(app);
 
-const auth = getAuth(firebaseApp);
+
+export function registerUser(email, password) {
+  return createUserWithEmailAndPassword(auth, email, password);
+}
+
+export function loginUser (email, password){
+  return signInWithEmailAndPassword(auth, email, password);
+}
+
 // const db = getFirestore(firebaseApp);
 
 // detect auth state
