@@ -40,6 +40,7 @@ export const forgot = (onNavigate) => {
   const buttonSave = document.createElement('button');
   buttonSave.textContent = 'Save';
   buttonSave.classList.add('buttonSave');
+  buttonSave.addEventListener('click', () => onNavigate('/'));
 
   homeDiv.appendChild(logo);
   homeDiv.appendChild(forgotYourPassword);

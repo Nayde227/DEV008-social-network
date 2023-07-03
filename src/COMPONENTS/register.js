@@ -1,3 +1,5 @@
+import { registerUser } from "../firebase";
+
 export const register = (onNavigate) => {
   const homeDiv = document.createElement('div');
   homeDiv.classList.add('home');
@@ -13,15 +15,15 @@ export const register = (onNavigate) => {
 
   buttonBack.textContent = '< Back';
   buttonBack.addEventListener('click', () => onNavigate('/'));
-  
+
   const userName = document.createTextNode('Username');
   const inputUser = document.createElement('input');
   inputUser.classList.add('inputRegister');
-  
+
   const name = document.createTextNode('Name');
   const inputName = document.createElement('input');
   inputName.classList.add('inputRegister');
-  
+
   const email = document.createTextNode('E-mail');
   const inputEmail = document.createElement('input');
   inputEmail.classList.add('inputRegister');
@@ -29,8 +31,8 @@ export const register = (onNavigate) => {
   const password = document.createTextNode('Password');
   const inputPassword = document.createElement('input');
   inputPassword.classList.add('inputRegister')
-  
-  
+
+
   const logo = document.createElement('img');
   logo.src = '../logo.png';
   logo.classList.add('logoRegister');
@@ -38,10 +40,31 @@ export const register = (onNavigate) => {
   const buttonSingUp = document.createElement('button');
   buttonSingUp.textContent = 'Register';
   buttonSingUp.classList.add('buttonSingUp');
+  buttonSingUp.addEventListener('click', () => {
+    registerUser(inputEmail.value, inputPassword.value).then(() => {
+      console.log("correctoprueba")
+      onNavigate('/')
+    }).catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
 
-  /*const terminos = document.createTextNode('By continuing, youagree to GO! Travel Terms of Service and Privacy Policy');
-  */
 
+      /*if (inputUser === '')
+        alert('check your information');
+      if (inputName === '')
+        alert('check your information');
+
+      if (inputEmail === '')
+        alert('check your information');
+      if (inputPassword === '')
+        alert('check your information');*/
+    }
+    )
+    console.log("errorprueba")
+
+    //console.log(error.code)
+
+  })
   homeDiv.appendChild(buttonBack);
   homeDiv.appendChild(logo);
   homeDiv.appendChild(registerHere);
@@ -54,7 +77,9 @@ export const register = (onNavigate) => {
   homeDiv.appendChild(password);
   homeDiv.appendChild(inputPassword);
   homeDiv.appendChild(buttonSingUp);
-  /*homeDiv.appendChild(terminos);*/
+
 
   return homeDiv;
+
+
 };
