@@ -47,7 +47,7 @@ export const register = (onNavigate) => {
 error code === al mensaje de error de la consola, envia me este mensaje
       if (inputEmail === '')
         alert('check your information');
-      if (inputPassword === '') if si existe emali y paswor
+      if (inputPassword === '') if si existe emali y paswor 
       ejecuta reg usauario then primero y lugue cacht con else
         alert('check your information'); */
 
