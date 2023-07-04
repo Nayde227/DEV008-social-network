@@ -39,30 +39,27 @@ export const register = (onNavigate) => {
   buttonSingUp.textContent = 'Register';
   buttonSingUp.classList.add('buttonSingUp');
   buttonSingUp.addEventListener('click', () => {
-  /* if (inputUser === '') cuando la información no sea correcta se debe
-  de verificar con firebase y con ese verificar
+  /* if (inputUser === '') cuando la información no sea correcta se debe de verificar con firebase y con ese verificar
         alert('check your information');
       if (inputName === '')
         alert('check your information');
-error code === al mensaje de error de la consola, envia me este mensaje
+error code === al mensaje de error de la consola, envia me este mensaje 
       if (inputEmail === '')
         alert('check your information');
-      if (inputPassword === '') if si existe emali y paswor
-      ejecuta reg usauario then primero y lugue cacht con else
+      if (inputPassword === '') if si existe emali y paswor ejecuta reg usauario then primero y lugue cacht con else
         alert('check your information'); */
 
     registerUser(inputEmail.value, inputPassword.value)
       .then(() => {
-        console.log('correctoprueba');
-        onNavigate('/');
+        console.log("correctoprueba");
+        onNavigate("/");
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode);
-        console.log(errorMessage);
       });
-    // console.log("errorprueba");
+    console.log("errorprueba");
   });
   homeDiv.appendChild(buttonBack);
   homeDiv.appendChild(logo);

@@ -35,8 +35,8 @@ export const home = (onNavigate) => {
   homeDiv.appendChild(buttonRegister);
   homeDiv.appendChild(buttonForgot);
 
-  buttonLogin.addEventListener('click', () => {loginUser(inputEmail.value, inputPassword.value).then(onNavigate('/login')).catch((e) => {console.log(e)});
-  });
+  buttonLogin.addEventListener('click', () => {loginUser(inputEmail.value, inputPassword.value).then(onNavigate('/login')).catch((e) => {console.log(e)})
+});
   buttonRegister.addEventListener('click', () => onNavigate('/register'));
   buttonForgot.addEventListener('click', () => onNavigate('/forgot'));
 

@@ -15,11 +15,12 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
+
 export function registerUser(email, password) {
   return createUserWithEmailAndPassword(auth, email, password);
 }
 
-export function loginUser(email, password) {
+export function loginUser (email, password){
   return signInWithEmailAndPassword(auth, email, password);
 }
 
