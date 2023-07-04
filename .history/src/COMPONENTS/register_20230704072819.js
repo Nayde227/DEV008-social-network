@@ -1,4 +1,4 @@
-import { registerUser } from '../firebase';
+import { registerUser } from "../firebase";
 
 export const register = (onNavigate) => {
   const homeDiv = document.createElement('div');
@@ -7,10 +7,11 @@ export const register = (onNavigate) => {
   const buttonBack = document.createElement('button');
   buttonBack.classList.add('buttonBack');
 
-  /* homeDiv.textContent = 'Register Here' */
+  /*homeDiv.textContent = 'Register Here';*/
   const registerHere = document.createElement('h3');
   registerHere.textContent = 'Register Here';
   registerHere.classList.add('registerHere');
+
 
   buttonBack.textContent = '< Back';
   buttonBack.addEventListener('click', () => onNavigate('/'));
@@ -28,8 +29,10 @@ export const register = (onNavigate) => {
   inputEmail.classList.add('inputRegister');
 
   const password = document.createTextNode('Password');
-  const inputPassword = document.createElement('input'); // type pasword checar que no se convierta en **
-  inputPassword.classList.add('inputRegister');
+  const inputPassword = document.createElement('input');// type pasword checar que no se convierta en **
+  //
+  inputPassword.classList.add('inputRegister')
+
 
   const logo = document.createElement('img');
   logo.src = '../logo.png';
@@ -39,31 +42,30 @@ export const register = (onNavigate) => {
   buttonSingUp.textContent = 'Register';
   buttonSingUp.classList.add('buttonSingUp');
   buttonSingUp.addEventListener('click', () => {
-  /* if (inputUser === '') cuando la información no sea correcta se debe
-  de verificar con firebase y con ese verificar
+         /*if (inputUser === '') // cuando lainformación no sea correcta se debe de verificar con firebase y con ese verificar 
         alert('check your information');
       if (inputName === '')
         alert('check your information');
-error code === al mensaje de error de la consola, envia me este mensaje
+error code === al mensaje de error de la consola, envia me este mensaje 
       if (inputEmail === '')
         alert('check your information');
-      if (inputPassword === '') if si existe emali y paswor
-      ejecuta reg usauario then primero y lugue cacht con else
-        alert('check your information'); */
+      if (inputPassword === '') if si existe emali y paswor ejecuta reg usauario then primero y lugue cacht con else 
+        alert('check your information');*/ 
 
-    registerUser(inputEmail.value, inputPassword.value)
-      .then(() => {
-        console.log('correctoprueba');
-        onNavigate('/');
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode);
-        console.log(errorMessage);
-      });
-    // console.log("errorprueba");
-  });
+    registerUser(inputEmail.value, inputPassword.value).then(() => {
+      console.log("correctoprueba")
+      onNavigate('/')
+    }).catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorCode)
+    }
+    )
+    console.log("errorprueba")
+
+    
+
+  })
   homeDiv.appendChild(buttonBack);
   homeDiv.appendChild(logo);
   homeDiv.appendChild(registerHere);
@@ -77,5 +79,8 @@ error code === al mensaje de error de la consola, envia me este mensaje
   homeDiv.appendChild(inputPassword);
   homeDiv.appendChild(buttonSingUp);
 
+
   return homeDiv;
+
+
 };

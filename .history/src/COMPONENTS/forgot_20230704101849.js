@@ -13,6 +13,7 @@ export const forgot = (onNavigate) => {
   buttonBack.addEventListener('click', () => onNavigate('/'));
   homeDiv.appendChild(buttonBack);
 
+  
   const writeEmail = document.createElement('p');
   writeEmail.textContent = 'Write your email';
   writeEmail.classList.add('textForgot');
