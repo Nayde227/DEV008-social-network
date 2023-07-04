@@ -1,3 +1,4 @@
+import { loginUser } from "../firebase";
 export const home = (onNavigate) => {
   const homeDiv = document.createElement('div'); // Div padre
   homeDiv.classList.add('home');
@@ -34,9 +35,11 @@ export const home = (onNavigate) => {
   homeDiv.appendChild(buttonRegister);
   homeDiv.appendChild(buttonForgot);
 
-  buttonLogin.addEventListener('click', () => onNavigate('/login'));
+  buttonLogin.addEventListener('click', () => {loginUser(inputEmail.value, inputPassword.value).then(onNavigate('/login')).catch((e) => {console.log(e)})
+});
   buttonRegister.addEventListener('click', () => onNavigate('/register'));
   buttonForgot.addEventListener('click', () => onNavigate('/forgot'));
 
+  buttonLogin
   return homeDiv;
 };
