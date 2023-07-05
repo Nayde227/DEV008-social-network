@@ -60,6 +60,18 @@ font-size: 1.8rem;
     
 }
 
+.accessGoogle{
+    background-image: url(../src/assets/logogoogle.png);
+    background-size: 50px;
+    background-repeat: no-repeat;
+    border-radius: 5px 5px 5px 5px;
+    padding: 7px;
+    width: 170px;
+    height: 36px;
+    font-size: 14px;
+    text-align: right;
+
+}
 .buttonFor {
     background-color: #6F93A3;
     border: solid 2px #6F93A3;

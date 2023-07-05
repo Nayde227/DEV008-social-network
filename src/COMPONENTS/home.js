@@ -1,4 +1,5 @@
 import { loginUser } from '../firebase';
+import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 export const home = (onNavigate) => {
   const homeDiv = document.createElement('div'); // Div padre
   homeDiv.classList.add('home');
@@ -22,7 +23,6 @@ export const home = (onNavigate) => {
   const inputPassword = document.createElement('input');
   inputPassword.classList.add('inputHome')
   inputPassword.type = 'password';
-  const getIntoPassword = inputPassword.value;
 
   const email = document.createTextNode('E-mail');
   const password = document.createTextNode('Password');
@@ -35,27 +35,54 @@ export const home = (onNavigate) => {
       alert('Complete all fields correctly')
     } else {
       loginUser(inputEmail.value, inputPassword.value)
-      .then((e) => onNavigate('/login'))
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        if(errorCode=== 'auth/wrong-password'){
-          alert('wrong password')
-        }
-        if(errorCode === 'auth/invalid-email'){
-          alert('invalid email')
-        }
-        console.log(errorCode);
-        console.log(errorMessage);
-        console.log(error)
-      });
+        .then((e) => onNavigate('/login'))
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          if (errorCode === 'auth/wrong-password') {
+            alert('wrong password')
+          }
+          if (errorCode === 'auth/invalid-email') {
+            alert('invalid email')
+          }
+          console.log(errorCode);
+          console.log(errorMessage);
+          console.log(error)
+        });
     }
   });
 
+  const provider = new GoogleAuthProvider();
+
+  const accessGoogle = document.createElement('button');
+  accessGoogle.textContent = 'Sing In with Google'
+  accessGoogle.classList.add('accessGoogle');
+
+  const auth = getAuth();
+  accessGoogle.addEventListener('click', () => {
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+      // The signed-in user info.
+      const user = result.user;
+      // IdP data available using getAdditionalUserInfo(result)
+      // ...
+    }).catch((error) => {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // The email of the user's account used.
+      const email = error.customData.email;
+      // The AuthCredential type that was used.
+      const credential = GoogleAuthProvider.credentialFromError(error);
+      // ...
+  })
+  });
   buttonRegister.addEventListener('click', () => onNavigate('/register'));
   buttonForgot.addEventListener('click', () => onNavigate('/forgot'));
 
-  buttonLogin
 
   homeDiv.appendChild(logo);
   homeDiv.appendChild(email);
@@ -64,6 +91,7 @@ export const home = (onNavigate) => {
   homeDiv.appendChild(inputPassword);
   homeDiv.appendChild(buttonLogin);
   homeDiv.appendChild(buttonRegister);
+  homeDiv.appendChild(accessGoogle);
   homeDiv.appendChild(buttonForgot);
 
   return homeDiv;
