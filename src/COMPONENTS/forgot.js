@@ -24,12 +24,14 @@ export const forgot = (onNavigate) => {
   writePassword.textContent = 'Write new password';
   writePassword.classList.add('textForgot');
   const inputNewPassword = document.createElement('input');
+  inputNewPassword.type='password';
   inputNewPassword.classList.add('inputForgot');
 
   const confirmPassword = document.createElement('p');
   confirmPassword.textContent = 'Confirm your new password';
   confirmPassword.classList.add('textForgot');
   const inputConfirmPassword = document.createElement('input');
+  inputConfirmPassword.type='password';
   inputConfirmPassword.classList.add('inputForgot');
 
   const logo = document.createElement('img');
