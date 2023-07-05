@@ -69,6 +69,7 @@ export const home = (onNavigate) => {
       const user = result.user;
       // IdP data available using getAdditionalUserInfo(result)
       // ...
+      onNavigate('/login');
     }).catch((error) => {
       // Handle Errors here.
       const errorCode = error.code;
