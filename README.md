@@ -29,6 +29,7 @@ Criterios de aceptación:
 2. crear, editar, borrar y "likear" publicaciones.
 3. Formar una comunidad de viajeros por el mundo.
 
+Nuestra página web, busca satisfacer las necesidades de estar en constante interacción con personas alrededor del mundo, interesadas en viajar y compartir sus experiencias, reseñas y recomendaciones de los lugares visitados.
 
 ## 2. Historias de usuario
 
