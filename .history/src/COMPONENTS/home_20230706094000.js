@@ -1,62 +1,62 @@
-import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
-import { loginUser } from '../firebase';
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { loginUser } from "../firebase";
 
 export const home = (onNavigate) => {
-  const homeDiv = document.createElement('div'); // Div padre
-  homeDiv.classList.add('home');
+  const homeDiv = document.createElement("div"); // Div padre
+  homeDiv.classList.add("home");
 
-  const buttonLogin = document.createElement('button');
-  buttonLogin.classList.add('buttonLog');
+  const buttonLogin = document.createElement("button");
+  buttonLogin.classList.add("buttonLog");
 
-  const buttonRegister = document.createElement('button');
-  buttonRegister.classList.add('buttonReg');
+  const buttonRegister = document.createElement("button");
+  buttonRegister.classList.add("buttonReg");
 
-  const buttonForgot = document.createElement('button');
-  buttonForgot.classList.add('buttonFor');
+  const buttonForgot = document.createElement("button");
+  buttonForgot.classList.add("buttonFor");
 
-  buttonRegister.textContent = 'Sing Up';
-  buttonLogin.textContent = 'Log in';
-  buttonForgot.textContent = 'Forgot password?';
+  buttonRegister.textContent = "Sing Up";
+  buttonLogin.textContent = "Log in";
+  buttonForgot.textContent = "Forgot password?";
 
-  const inputEmail = document.createElement('input');
-  inputEmail.classList.add('inputHome');
-  inputEmail.type = 'email';
-  const inputPassword = document.createElement('input');
-  inputPassword.classList.add('inputHome');
-  inputPassword.type = 'password';
+  const inputEmail = document.createElement("input");
+  inputEmail.classList.add("inputHome");
+  inputEmail.type = "email";
+  const inputPassword = document.createElement("input");
+  inputPassword.classList.add("inputHome");
+  inputPassword.type = "password";
 
-  const email = document.createTextNode('E-mail');
-  const password = document.createTextNode('Password');
-  const logo = document.createElement('img');
-  logo.src = '../logo.png';
-  logo.classList.add('logo');
+  const email = document.createTextNode("E-mail");
+  const password = document.createTextNode("Password");
+  const logo = document.createElement("img");
+  logo.src = "../logo.png";
+  logo.classList.add("logo");
 
-  buttonLogin.addEventListener('click', () => {
+  buttonLogin.addEventListener("click", () => {
     if (!inputEmail.value || !inputPassword.value) {
       // eslint-disable-next-line no-alert
-      alert('Complete all fields correctly');
+      alert("Complete all fields correctly");
     } else {
       loginUser(inputEmail.value, inputPassword.value)
-        .then((e) => onNavigate('/login'))
+        .then((e) => onNavigate("/login"))
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          if (errorCode === 'auth/wrong-password') {
+          if (errorCode === "auth/wrong-password") {
             // eslint-disable-next-line no-alert
-            alert('wrong password');
+            alert("wrong password");
           }
-          if (errorCode === 'auth/invalid-email') {
+          if (errorCode === "auth/invalid-email") {
             // eslint-disable-next-line no-alert
-            alert('invalid email');
+            alert("invalid email");
           }
-          if (errorCode === 'auth/invalid-hash-derived-key-length') {
+          if (errorCode === "auth/invalid-hash-derived-key-length") {
             // eslint-disable-next-line no-alert
-            alert('invalid key length');
+            alert("invalid key length");
           }
 
-          if (errorCode === 'auth/user-not-found') {
+          if (errorCode === "auth/user-not-found") {
             // eslint-disable-next-line no-alert
-            alert('user not found');
+            alert("user not found");
           }
           console.log(errorCode);
           console.log(errorMessage);

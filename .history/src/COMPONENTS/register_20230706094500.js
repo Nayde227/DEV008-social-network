@@ -61,10 +61,6 @@ export const register = (onNavigate) => {
             // eslint-disable-next-line no-alert
             alert('email already in use');
           }
-          if (errorCode === 'auth/invalid-email') {
-            // eslint-disable-next-line no-alert
-            alert('invalid email');
-          }
           console.log(errorCode);
           console.log(errorMessage);
         });
