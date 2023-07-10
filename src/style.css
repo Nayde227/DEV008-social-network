@@ -56,7 +56,12 @@ align-items: center;
     margin: 20px;
     font-size: 20px;
     box-shadow: 7px 7px 7px;
+    cursor:pointer;
 }
+.buttonLog:hover{
+background-color: aquamarine;
+}
+
 .buttonReg {
     background-color: rgba(111, 147, 163, 0.5);
     border: solid 2px rgba(111, 147, 163, 0.5);
@@ -65,7 +70,9 @@ align-items: center;
     width: 108px;
     height: 21px;
     margin: 10px;
+    cursor:pointer;
 }
+
 .accessGoogle {
     background-image: url(../src/assets/logogoogle.png);
     background-size: 50px;
@@ -76,6 +83,7 @@ align-items: center;
     height: 36px;
     font-size: 14px;
     text-align: right;
+    cursor:pointer;
 }
 .buttonFor {
     background-color: rgba(111, 147, 163, 0.5);
@@ -85,6 +93,7 @@ align-items: center;
     width: 150px;
     height: 21px;
     margin: 10px;
+    cursor:pointer;
 }
 /*------Página Register----*/
 .inputRegister {
@@ -111,7 +120,12 @@ align-items: center;
     position: fixed;
     margin-top: -730px;
     margin-left: -250px;
+    cursor:pointer;
 }
+.buttonBack:hover{
+    background-color: aquamarine;
+    }
+    
 .registerHere {
     font-size: 36px;
     /*font-family: ;*/
@@ -129,7 +143,12 @@ align-items: center;
     margin: 20px;
     font-size: 20px;
     box-shadow: 7px 7px 7px;
+    cursor:pointer;
 }
+.buttonSingUp:hover{
+    background-color: aquamarine;
+    }
+    
 /*------Página Forgot----*/
 .logoForgot {
     display: flex;
@@ -156,7 +175,12 @@ align-items: center;
     margin: 20px;
     font-size: 20px;
     box-shadow: 7px 7px 7px;
+    cursor:pointer;
 }
+.buttonSave:hover{
+    background-color: aquamarine;
+    }
+    
 .inputForgot {
     border-radius: 5px 5px 5px 5px;
     border: solid 2px black;
