@@ -1,54 +1,57 @@
-body, html {
-   background-color: blue;
-   height: 100%;
-   background-image: url(viaje4.jpg);
-   background-size: 100% 100%;
-   background-repeat: no-repeat;
- 
-}
-body {
-margin:0;
-display: flex;
-justify-content: center;
-align-items: center;
-}
 
-#root {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body{
+  background-image: url(./viaje4.jpg);
+  background-size: 100% 110%;
 }
 
 .home {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(111, 147, 163, 0.6);
-    width: 315px;
-    height: 475px;
-    margin-top: 150px;
-    border-radius: 20px;
-    font-size: 1.8rem;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ background-color: rgba(111, 147, 163, 0.5);
+ width: 520px; 
+ height: 510px;
+ margin-top: 150px;
+ margin-left: 500px;
+border-radius: 20px;
+font-size: 1.8rem;
 }
+
+/*
+.imgTravel{
+display: flex;
+position: fixed ;
+width: 500px;
+height: 700px;
+margin-left: -1550px;
+
+border-radius: 130px 130px 130px 130px;
+}*/
+
 .logo {
-    display: flex;
-    border-radius: 130px 130px 130px 130px;
-    width: 245px;
-    height: 230px;
-    box-shadow: 7px 7px 7px;
-    margin: 20px;
-    margin-top: -150px;
+ display: flex;
+ border-radius: 130px 130px 130px 130px;
+ width:245px;
+ height:230px;
+ box-shadow: 7px 7px 7px;
+ margin: 20px;
+ margin-top: -150px;
 }
+
+
 .inputHome {
     border-radius: 5px 5px 5px 5px;
     border: solid 2px black;
     background-color: whitesmoke;
-    width: 249px;
+    width: 290px;
     height: 35px;
+    margin: 3px;
+    padding: 2px;
 }
-.buttonLog {
-    background-color: #1FC2D4;
+
+.buttonLog{
+    background-color: #1fc2d4;
     border: solid 2px black;
     border-radius: 5px;
     width: 125px;
@@ -56,17 +59,21 @@ align-items: center;
     margin: 20px;
     font-size: 20px;
     box-shadow: 7px 7px 7px;
+
 }
+
 .buttonReg {
-    background-color: rgba(111, 147, 163, 0.5);
-    border: solid 2px rgba(111, 147, 163, 0.5);
+    background-color: #6F93A3;
+    border: solid 2px #6F93A3;
     font-size: 16px;
     font-style: italic;
     width: 108px;
     height: 21px;
     margin: 10px;
+    
 }
-.accessGoogle {
+
+.accessGoogle{
     background-image: url(../src/assets/logogoogle.png);
     background-size: 50px;
     background-repeat: no-repeat;
@@ -76,18 +83,20 @@ align-items: center;
     height: 36px;
     font-size: 14px;
     text-align: right;
+
 }
 .buttonFor {
-    background-color: rgba(111, 147, 163, 0.5);
-    border: solid 2px rgba(111, 147, 163, 0.5);
+    background-color: #6F93A3;
+    border: solid 2px #6F93A3;
     font-size: 16px;
     font-style: italic;
     width: 150px;
     height: 21px;
     margin: 10px;
 }
+
 /*------Página Register----*/
-.inputRegister {
+.inputRegister{
     border-radius: 5px 5px 5px 5px;
     border: solid 2px black;
     background-color: whitesmoke;
@@ -97,31 +106,32 @@ align-items: center;
 .logoRegister {
     display: flex;
     border-radius: 130px 130px 130px 130px;
-    width: 190px;
+    width:190px;
     height: 190px;
     box-shadow: 7px 7px 7px;
     margin-top: -130px;
-}
-.buttonBack {
-    background-color: #8CDBE4;
+   }
+.buttonBack{
+    background-color: #8cdbe4;
     opacity: 85%;
-    width: 84px;
-    height: 29px;
+    width: 90px;
+    height: 35px;
     border-radius: 5px;
     position: fixed;
     margin-top: -730px;
-    margin-left: -250px;
+    margin-left: -400px;
 }
 .registerHere {
-    font-size: 36px;
+    font-size: 36px ;
     /*font-family: ;*/
     width: 250px;
     height: 46px;
     margin: 0px;
     margin-left: 35px;
 }
+
 .buttonSingUp {
-    background-color: #1FC2D4;
+    background-color: #1fc2d4;
     border: solid 2px black;
     border-radius: 5px;
     width: 125px;
@@ -129,26 +139,30 @@ align-items: center;
     margin: 20px;
     font-size: 20px;
     box-shadow: 7px 7px 7px;
+
 }
+
 /*------Página Forgot----*/
+
 .logoForgot {
     display: flex;
     border-radius: 130px 130px 130px 130px;
-    width: 190px;
+    width:190px;
     height: 190px;
     box-shadow: 7px 7px 7px;
     margin-top: -130px;
-}
-.forgotYourPassword {
-    font-size: 26px;
+   }
+
+.forgotYourPassword{
+    font-size: 26px ;
     /*font-family: ;*/
     width: 300px;
     height: 46px;
     margin: 2%;
     margin-left: 35px;
 }
-.buttonSave {
-    background-color: #1FC2D4;
+.buttonSave{
+    background-color: #1fc2d4;
     border: solid 2px black;
     border-radius: 5px;
     width: 125px;
@@ -156,16 +170,18 @@ align-items: center;
     margin: 20px;
     font-size: 20px;
     box-shadow: 7px 7px 7px;
+
 }
-.inputForgot {
+
+.inputForgot{
     border-radius: 5px 5px 5px 5px;
     border: solid 2px black;
     background-color: whitesmoke;
     width: 249px;
     height: 30px;
 }
-.textForgot {
-    font-size: 25px;
-    margin: 5px;
-}
 
+.textForgot{
+ font-size: 25px;
+ margin: 5px;
+}

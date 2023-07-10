@@ -1,24 +1,9 @@
-body, html {
-   background-color: blue;
-   height: 100%;
-   background-image: url(viaje4.jpg);
-   background-size: 100% 100%;
-   background-repeat: no-repeat;
- 
-}
 body {
-margin:0;
-display: flex;
-justify-content: center;
-align-items: center;
+    background-image: url(viaje4.jpg);
+    background-size: 110%;
+    background-repeat: no-repeat;
+    position: fixed;
 }
-
-#root {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .home {
     display: flex;
     flex-direction: column;
@@ -28,6 +13,7 @@ align-items: center;
     width: 315px;
     height: 475px;
     margin-top: 150px;
+    margin-left: 20px;
     border-radius: 20px;
     font-size: 1.8rem;
 }
