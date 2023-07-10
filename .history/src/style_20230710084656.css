@@ -1,24 +1,8 @@
-body, html {
-   background-color: blue;
-   height: 100%;
-   background-image: url(viaje4.jpg);
-   background-size: 100% 100%;
-   background-repeat: no-repeat;
- 
-}
 body {
-margin:0;
-display: flex;
-justify-content: center;
-align-items: center;
+    background-image: url(viaje4.jpg);
+    background-size: 100%;
+    position: fixed;
 }
-
-#root {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .home {
     display: flex;
     flex-direction: column;
@@ -28,6 +12,7 @@ align-items: center;
     width: 315px;
     height: 475px;
     margin-top: 150px;
+    margin-left: 20px;
     border-radius: 20px;
     font-size: 1.8rem;
 }
@@ -58,8 +43,8 @@ align-items: center;
     box-shadow: 7px 7px 7px;
 }
 .buttonReg {
-    background-color: rgba(111, 147, 163, 0.5);
-    border: solid 2px rgba(111, 147, 163, 0.5);
+    background-color: rgba(111, 147, 163, 0.6);
+    border: solid 2px rgba(111, 147, 163, 0.6);
     font-size: 16px;
     font-style: italic;
     width: 108px;
@@ -78,8 +63,8 @@ align-items: center;
     text-align: right;
 }
 .buttonFor {
-    background-color: rgba(111, 147, 163, 0.5);
-    border: solid 2px rgba(111, 147, 163, 0.5);
+    background-color: rgba(111, 147, 163, 0.6);
+    border: solid 2px rgba(111, 147, 163, 0.6);
     font-size: 16px;
     font-style: italic;
     width: 150px;
@@ -168,4 +153,3 @@ align-items: center;
     font-size: 25px;
     margin: 5px;
 }
-
