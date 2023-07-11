@@ -96,14 +96,17 @@ En esta sección, se presentan los bocetos de los prototipos, de baja fidelidad 
 ![Prototipo de baja calidad de pantalla de inicio móvil](./src/assets/PB.HOME.jpg)
 ![Prototipo de baja calidad de pantalla de registro móvil](./src/assets/PB.Register.jpg)
 ![Prototipo de baja calidad de pantalla de recuperar contraseña móvil](./src/assets/PB.Forgot.jpg)
+![Prototipo de baja calidad de pantalla de muro](./src/assets/PB.Muro.jpg)
 
 ## 4. Prototipos de alta fidelidad
 
 
-![Prototipo de alta calidad de pantalla de inicio escritorio](./src/assets/PA.HomeDesktop.png)
-![Prototipo de alta calidad de pantalla de registro de escritorio](./src/assets/PA.RegisterDesktop.png)
-![Prototipo de alta calidad de pantalla de recuperar contraseña de escritorio](./src/assets/PA.ForgotDesktop.jpg)
-![Prototipo de alta calidad de pantalla de inicio móvil](./src/assets/PA.HomeMobile.png)
-![Prototipo de alta calidad de pantalla de registro móvil](./src/assets/PA.RegisterMobile.png)
-![Prototipo de alta calidad de pantalla de recuperar contraseña móvil](./src/assets/PA.ForgotMobile.jpg)
+![Prototipo de alta calidad de pantalla de inicio escritorio](./src/assets/logindesktop.png)
+![Prototipo de alta calidad de pantalla de registro de escritorio](./src/assets/registerdesktop.png)
+![Prototipo de alta calidad de pantalla de recuperar contraseña de escritorio](./src/assets/forgotdesktop.png)
+![Prototipo de alta calidad de pantalla de muro de escritorio](./src/assets/murodesktop.png)
+![Prototipo de alta calidad de pantalla de inicio móvil](./src/assets/loginmovil.png)
+![Prototipo de alta calidad de pantalla de registro móvil](./src/assets/registermovil.png)
+![Prototipo de alta calidad de pantalla de recuperar contraseña móvil](./src/assets/forgotmovil.png)
+![Prototipo de alta calidad de pantalla de muro móvil](./src/assets/muromovil.png)
 
