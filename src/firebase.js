@@ -1,6 +1,8 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 // import { getFirestore} from 'firebase/firestore';
+import { getFirestore } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBCKCACUtV4KUQBasLm6x0eJnurCNedrIE',
@@ -12,8 +14,10 @@ const firebaseConfig = {
   measurementId: 'G-169WWZZ1Z5',
 };
 
+
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db = getFirestore(app);
 
 const provider = new GoogleAuthProvider();
 /*const auth = getAuth();
@@ -57,3 +61,16 @@ export function loginUser(email, password) {
 }
 });
 */
+
+export function getData( docRef, docSnap) {
+  return doc();
+const docRef = doc(db, 'travel-post', 'wsTMo2kR9dn0cdafUYNV');
+const docSnap = await getDoc(docRef);
+
+if (docSnap.exists()) {
+  console.log("Document data:", docSnap.data());
+} else {
+  // docSnap.data() will be undefined in this case
+  console.log("No such document!");
+}
+};

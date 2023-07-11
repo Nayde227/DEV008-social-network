@@ -89,6 +89,21 @@ Definición de Terminado
 1. Que la interfaz se amigable con el usuario, que el usuario pueda crear y recuperar su contraseña.
 2. Que pueda ingresar desde cualquier dispositivo.
 
+Historia de usuario cuarta página (Muro)
+
+- Yo como: Usuario de una social network de viajeros por el mundo.
+- Quiero: Poder hacer post de mis experiencias, recomiendaciones a viajeros.
+- Para: Poder dar me gusta a los post de otros viajeros e informarme de tips que me pudieran servir en futuros viajes.
+
+Criterios de aceptación 
+1. Poder escribir un post en el muro;
+2. Poder editar el post o eliminarlo;
+3. Poder ver número de likes en mis post.
+
+Definición de Terminado
+1. Que la interfaz se amigable con el usuario y le permita escribir, editar, dar y contar likes en posts.
+2. Que pueda ingresar desde cualquier dispositivo.
+
 ## 3. Prototipos de baja fidelidad
 
 En esta sección, se presentan los bocetos de los prototipos, de baja fidelidad para las diferentes pantallas.
