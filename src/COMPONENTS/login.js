@@ -94,4 +94,5 @@ window.addEventListener('DOMContentLoaded', async() => {
 
 
   return homeDiv;
+  
 };
