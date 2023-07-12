@@ -1,7 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 // import { getFirestore} from 'firebase/firestore';
-import { getDocs, getFirestore } from "firebase/firestore";
+import { getFirestore } from "firebase/firestore";
 import { doc, getDoc, collection, addDoc } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -50,20 +50,6 @@ export function loginUser(email, password) {
   return signInWithEmailAndPassword(auth, email, password);
 }
 
-export const saveForm = (titles, descriptions) => {
-addDoc(collection(db,'travel-post'), {
-  titles, descriptions
-})
-  
-};
-
-export const getForm = () => getDocs(collection(db,'travel-post'));
-
-
-
-
-
-
 // const db = getFirestore(firebaseApp);
 
 // detect auth state
@@ -75,7 +61,7 @@ export const getForm = () => getDocs(collection(db,'travel-post'));
 }
 });
 */
-/*export function saveData(email, text){
+export function sendData(email, text){
   return addDoc(collection(db, "travel-post"), {
     email,
     text
@@ -84,8 +70,8 @@ export const getForm = () => getDocs(collection(db,'travel-post'));
   
 };
 
-*/
-/*export function getData() {
+
+export function getData() {
   
 const docRef = doc(db, 'travel-post');
 getDoc(docRef).then((docSnap)=>{
@@ -98,9 +84,8 @@ getDoc(docRef).then((docSnap)=>{
   // docSnap.data() will be undefined in this case
   console.log("No such document!");
 }
+*/
 
-
-return doc();
+/*return doc();*/
 
 };
-*/

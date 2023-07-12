@@ -1,4 +1,4 @@
-import { getData, sendData } from "../firebase";
+import { getData } from "../firebase";
 
 export const login = (onNavigate) => {
   const homeDiv = document.createElement("div");
@@ -19,21 +19,14 @@ export const login = (onNavigate) => {
 
   buttonPost.addEventListener("click", () => getData());
 
-  buttonPost.addEventListener('click',() => {
-    sendData('camila.alejandra.lupe@outlook.com', 'texto').then((result)=>(console.log(result)))
-    //getData()
-    
-  });
+  const logo = document.createElement("img");
+  logo.src = "../logo.png";
+  logo.classList.add("logoPost");
 
-  
-  const logo = document.createElement('img');
-  logo.src = '../logo.png';
-  logo.classList.add('logoPost');
+  const logoUser = document.createElement("img");
+  logoUser.src = "../logouser.png";
+  logoUser.classList.add("logoUser");
 
-  const logoUser = document.createElement('img');
-  logoUser.src = '../logouser.png';
-  logoUser.classList.add('logoUser');
-  
   homeDiv.appendChild(buttonHome);
   homeDiv.appendChild(logoUser);
   homeDiv.appendChild(inputPost);
