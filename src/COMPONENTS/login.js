@@ -41,4 +41,5 @@ export const login = (onNavigate) => {
   homeDiv.appendChild(logo);
 
   return homeDiv;
+  
 };
