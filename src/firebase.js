@@ -2,7 +2,7 @@ import { initializeApp } from 'firebase/app';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 // import { getFirestore} from 'firebase/firestore';
 import { getFirestore } from "firebase/firestore";
-import { doc, getDoc } from "firebase/firestore";
+import { doc, getDoc, collection, addDoc } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBCKCACUtV4KUQBasLm6x0eJnurCNedrIE',
@@ -61,16 +61,31 @@ export function loginUser(email, password) {
 }
 });
 */
+export function sendData(email, text){
+  return addDoc(collection(db, "travel-post"), {
+    email,
+    text
+  });
+ 
+  
+};
 
-export function getData( docRef, docSnap) {
-  return doc();
-const docRef = doc(db, 'travel-post', 'wsTMo2kR9dn0cdafUYNV');
-const docSnap = await getDoc(docRef);
 
-if (docSnap.exists()) {
+export function getData() {
+  
+const docRef = doc(db, 'travel-post');
+getDoc(docRef).then((docSnap)=>{
   console.log("Document data:", docSnap.data());
+});
+
+/*if (docSnap.exists()) {
+
 } else {
   // docSnap.data() will be undefined in this case
   console.log("No such document!");
 }
+*/
+
+/*return doc();*/
+
 };
