@@ -73,8 +73,9 @@ background-color: aquamarine;
 }
 
 .accessGoogle {
-    background-image: url(../src/assets/logogoogle.png);
-    background-size: 50px;
+    background-image: url(../src/assets/solologoGoogle.png);
+    background-size: 18%;
+    background-position:left;
     background-repeat: no-repeat;
     border-radius: 5px 5px 5px 5px;
     padding: 7px;
