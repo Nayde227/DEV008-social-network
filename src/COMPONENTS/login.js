@@ -2,13 +2,13 @@
 import { saveForm, getForm } from "../firebase";
 
 export const login = (onNavigate) => {
-  const homeDiv = document.createElement('div'); //padre
+  const homeDiv = document.createElement("div");
 
-  homeDiv.textContent = 'Welcome to GO!Travel';
+  homeDiv.textContent = "Welcome to GO!Travel";
 
-  const buttonHome = document.createElement('button');// salida
-  buttonHome.textContent = 'Log out';
-  buttonHome.addEventListener('click', () => onNavigate('/'));
+  const buttonHome = document.createElement("button");
+  buttonHome.textContent = "Log out";
+  buttonHome.addEventListener("click", () => onNavigate("/"));
 
   const form = document.createElement('form');
   form.classList.add('form');
@@ -55,8 +55,7 @@ export const login = (onNavigate) => {
     saveForm(titles.value, descriptions.value)
     form.reset()
   });
-
-
+  
   const logo = document.createElement('img');
   logo.src = '../logo.png';
   logo.classList.add('logoPost');
@@ -64,8 +63,9 @@ export const login = (onNavigate) => {
   const logoUser = document.createElement('img');
   logoUser.src = '../logouser.png';
   logoUser.classList.add('logoUser');
-
+  
   homeDiv.appendChild(buttonHome);
+
   //homeDiv.appendChild(logo);
   homeDiv.appendChild(form);
   homeDiv.appendChild(containerData);
