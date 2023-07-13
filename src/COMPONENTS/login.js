@@ -1,4 +1,4 @@
-import { async } from "regenerator-runtime";
+//import { async } from "regenerator-runtime";
 import { saveForm, getForm } from "../firebase";
 
 export const login = (onNavigate) => {
@@ -12,7 +12,7 @@ export const login = (onNavigate) => {
 
   const form = document.createElement('form');
   form.classList.add('form');
-  
+
   const title = document.createElement('label');
   title.textContent = 'Title';
   const titles = document.createElement('input');
@@ -23,44 +23,30 @@ export const login = (onNavigate) => {
   const descriptions = document.createElement('input');
   descriptions.placeholder = 'Description';
   description.classList.add('inputDescription');
-  
+
   const buttonPost = document.createElement('button');
   buttonPost.classList.add('buttonPost');
   buttonPost.textContent = 'Post';
 
-  
+
   //Eventos
+  window.addEventListener('DOMContentLoaded', async () => {
+    const querySnapshot = await getForm()
+    const containerData = document.getElementById('containerData')
 
-  /*buttonPost.addEventListener('submit',(e) => {
+    let html = ''
+    querySnapshot.forEach(doc => {
+      const postData = doc.data()
 
-    const text = inputPost.value
-    saveData(text).then((result)=>(console.log(result)))
-    //getData()
-    
-  });
-*/
-
-
-window.addEventListener('DOMContentLoaded', async() => {
-  const querySnapshot = await getForm()
-  const containerData = document.getElementById('containerData')
-
-  let html = ''
-   querySnapshot.forEach(doc => {
-    const postData = doc.data()
-
-     html += `
+      html += `
     <div>
       <h3>${postData.titles}</h3>
       <p>${postData.descriptions}</p>
     </div>
     `
+    })
+    containerData.innerHTML = html
   })
-
-  containerData.innerHTML= html
-
-
-})
 
 
   form.addEventListener('submit', (e) => {
@@ -80,7 +66,7 @@ window.addEventListener('DOMContentLoaded', async() => {
   logoUser.classList.add('logoUser');
 
   homeDiv.appendChild(buttonHome);
-  homeDiv.appendChild(logo);
+  //homeDiv.appendChild(logo);
   homeDiv.appendChild(form);
   homeDiv.appendChild(containerData);
   form.appendChild(title);
@@ -90,9 +76,5 @@ window.addEventListener('DOMContentLoaded', async() => {
   form.appendChild(buttonPost);
 
   /*homeDiv.appendChild(logoUser);*/
-
-
-
   return homeDiv;
-  
 };
