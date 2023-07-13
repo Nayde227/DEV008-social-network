@@ -1,4 +1,5 @@
-import { getData, sendData } from "../firebase";
+//import { async } from "regenerator-runtime";
+import { saveForm, getForm } from "../firebase";
 
 export const login = (onNavigate) => {
   const homeDiv = document.createElement("div");
@@ -9,22 +10,51 @@ export const login = (onNavigate) => {
   buttonHome.textContent = "Log out";
   buttonHome.addEventListener("click", () => onNavigate("/"));
 
-  const inputPost = document.createElement("input");
-  inputPost.classList.add("inputPost");
-  inputPost.placeholder = "write your travel...";
+  const form = document.createElement('form');
+  form.classList.add('form');
 
-  const buttonPost = document.createElement("button");
-  buttonPost.classList.add("buttonPost");
-  buttonPost.textContent = "Post";
+  const title = document.createElement('label');
+  title.textContent = 'Title';
+  const titles = document.createElement('input');
+  titles.placeholder = "Title"
 
-  buttonPost.addEventListener("click", () => getData());
+  const description = document.createElement('label');
+  description.textContent = 'Description';
+  const descriptions = document.createElement('input');
+  descriptions.placeholder = 'Description';
+  description.classList.add('inputDescription');
 
-  buttonPost.addEventListener('click',() => {
-    sendData('camila.alejandra.lupe@outlook.com', 'texto').then((result)=>(console.log(result)))
-    //getData()
-    
+  const buttonPost = document.createElement('button');
+  buttonPost.classList.add('buttonPost');
+  buttonPost.textContent = 'Post';
+
+
+  //Eventos
+  window.addEventListener('DOMContentLoaded', async () => {
+    const querySnapshot = await getForm()
+    const containerData = document.getElementById('containerData')
+
+    let html = ''
+    querySnapshot.forEach(doc => {
+      const postData = doc.data()
+
+      html += `
+    <div>
+      <h3>${postData.titles}</h3>
+      <p>${postData.descriptions}</p>
+    </div>
+    `
+    })
+    containerData.innerHTML = html
+  })
+
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    saveForm(titles.value, descriptions.value)
+    form.reset()
   });
-
   
   const logo = document.createElement('img');
   logo.src = '../logo.png';
@@ -35,11 +65,16 @@ export const login = (onNavigate) => {
   logoUser.classList.add('logoUser');
   
   homeDiv.appendChild(buttonHome);
-  homeDiv.appendChild(logoUser);
-  homeDiv.appendChild(inputPost);
-  homeDiv.appendChild(buttonPost);
-  homeDiv.appendChild(logo);
 
+  //homeDiv.appendChild(logo);
+  homeDiv.appendChild(form);
+  homeDiv.appendChild(containerData);
+  form.appendChild(title);
+  form.appendChild(titles);
+  form.appendChild(description);
+  form.appendChild(descriptions);
+  form.appendChild(buttonPost);
+
+  /*homeDiv.appendChild(logoUser);*/
   return homeDiv;
-  
 };
