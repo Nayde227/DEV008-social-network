@@ -1,7 +1,8 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+// import { getFirestore} from 'firebase/firestore';
 import { getFirestore } from 'firebase/firestore';
-import { getDocs, collection, addDoc } from 'firebase/firestore';
+import { getDocs, collection, addDoc } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBCKCACUtV4KUQBasLm6x0eJnurCNedrIE',
@@ -28,9 +29,10 @@ export function loginUser(email, password) {
 }
 
 export const saveForm = (titles, descriptions) => {
-  addDoc(collection(db, 'travel-post'), {
-    titles, descriptions,
-  });
+  addDoc(collection(db,'travel-post'), {
+    titles, descriptions
+})
+  
 };
 
-export const getForm = () => getDocs(collection(db, 'travel-post'));
+export const getForm = () => getDocs(collection(db,'travel-post'));

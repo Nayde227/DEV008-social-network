@@ -1,28 +1,28 @@
-// import { async } from "regenerator-runtime";
-import { saveForm, getForm } from '../firebase';
+//import { async } from "regenerator-runtime";
+import { saveForm, getForm } from "../firebase";
 
 export const login = (onNavigate) => {
-  const homeDiv = document.createElement('div');
+  const homeDiv = document.createElement("div");
 
-  homeDiv.textContent = 'Welcome to GO!Travel';
+  homeDiv.textContent = "Welcome to GO!Travel";
 
-  const buttonHome = document.createElement('button');
-  buttonHome.textContent = 'Log out';
-  buttonHome.addEventListener('click', () => onNavigate('/'));
+  const buttonHome = document.createElement("button");
+  buttonHome.textContent = "Log out";
+  buttonHome.addEventListener("click", () => onNavigate("/"));
 
-  const form = document.createElement('form');
-  form.classList.add('form');
+  const form = document.createElement("form");
+  form.classList.add("form");
 
-  const title = document.createElement('label');
-  title.textContent = 'Title';
-  const titles = document.createElement('input');
-  titles.placeholder = 'Title';
+  const title = document.createElement("label");
+  title.textContent = "Title";
+  const titles = document.createElement("input");
+  titles.placeholder = "Title";
 
-  const description = document.createElement('label');
-  description.textContent = 'Description';
-  const descriptions = document.createElement('input');
-  descriptions.placeholder = 'Description';
-  description.classList.add('inputDescription');
+  const description = document.createElement("label");
+  description.textContent = "Description";
+  const descriptions = document.createElement("input");
+  descriptions.placeholder = "Description";
+  description.classList.add("inputDescription");
 
   const buttonPost = document.createElement('button');
   buttonPost.classList.add('buttonPost');
@@ -31,7 +31,7 @@ export const login = (onNavigate) => {
   // Eventos
   window.addEventListener('DOMContentLoaded', async () => {
     const querySnapshot = await getForm();
-    const containerData = document.getElementById('container');
+    const containerData = document.getElementById('containerData');
 
     let html = '';
     querySnapshot.forEach((doc) => {

@@ -7,6 +7,7 @@ export const register = (onNavigate) => {
   const buttonBack = document.createElement('button');
   buttonBack.classList.add('buttonBack');
 
+  /* homeDiv.textContent = 'Register Here' */
   const registerHere = document.createElement('h3');
   registerHere.textContent = 'Register Here';
   registerHere.classList.add('registerHere');
