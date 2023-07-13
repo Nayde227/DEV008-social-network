@@ -14,33 +14,12 @@ const firebaseConfig = {
   measurementId: 'G-169WWZZ1Z5',
 };
 
-
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
 const provider = new GoogleAuthProvider();
-/*const auth = getAuth();
-signInWithPopup(auth, provider)
-  .then((result) => {
-    // This gives you a Google Access Token. You can use it to access the Google API.
-    const credential = GoogleAuthProvider.credentialFromResult(result);
-    const token = credential.accessToken;
-    // The signed-in user info.
-    const user = result.user;
-    // IdP data available using getAdditionalUserInfo(result)
-    // ...
-  }).catch((error) => {
-    // Handle Errors here.
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // The email of the user's account used.
-    const email = error.customData.email;
-    // The AuthCredential type that was used.
-    const credential = GoogleAuthProvider.credentialFromError(error);
-    // ...
-  });
-*/
+
 
 export function registerUser(email, password) {
   return createUserWithEmailAndPassword(auth, email, password);
@@ -50,42 +29,11 @@ export function loginUser(email, password) {
   return signInWithEmailAndPassword(auth, email, password);
 }
 
-// const db = getFirestore(firebaseApp);
-
-// detect auth state
-/* onAuthStateChanged(auth, user => {
-    if (user ≠ null) {
-    consolelog('logged in!');
-} else {
-    console.log('No user');
-}
-});
-*/
-export function sendData(email, text){
-  return addDoc(collection(db, "travel-post"), {
-    email,
-    text
-  });
- 
+export const saveForm = (titles, descriptions) => {
+addDoc(collection(db,'travel-post'), {
+  titles, descriptions
+})
   
 };
 
-
-export function getData() {
-  
-const docRef = doc(db, 'travel-post');
-getDoc(docRef).then((docSnap)=>{
-  console.log("Document data:", docSnap.data());
-});
-
-/*if (docSnap.exists()) {
-
-} else {
-  // docSnap.data() will be undefined in this case
-  console.log("No such document!");
-}
-*/
-
-/*return doc();*/
-
-};
+export const getForm = () => getDocs(collection(db,'travel-post'));
