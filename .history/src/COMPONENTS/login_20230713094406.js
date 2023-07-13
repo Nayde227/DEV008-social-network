@@ -1,14 +1,14 @@
-// import { async } from "regenerator-runtime";
+//import { async } from "regenerator-runtime";
 import { saveForm, getForm } from '../firebase';
 
 export const login = (onNavigate) => {
-  const homeDiv = document.createElement('div');
+  const homeDiv = document.createElement("div");
 
-  homeDiv.textContent = 'Welcome to GO!Travel';
+  homeDiv.textContent = "Welcome to GO!Travel";
 
-  const buttonHome = document.createElement('button');
-  buttonHome.textContent = 'Log out';
-  buttonHome.addEventListener('click', () => onNavigate('/'));
+  const buttonHome = document.createElement("button");
+  buttonHome.textContent = "Log out";
+  buttonHome.addEventListener("click", () => onNavigate('/'));
 
   const form = document.createElement('form');
   form.classList.add('form');
@@ -16,7 +16,7 @@ export const login = (onNavigate) => {
   const title = document.createElement('label');
   title.textContent = 'Title';
   const titles = document.createElement('input');
-  titles.placeholder = 'Title';
+  titles.placeholder = "Title"
 
   const description = document.createElement('label');
   description.textContent = 'Description';
@@ -28,32 +28,34 @@ export const login = (onNavigate) => {
   buttonPost.classList.add('buttonPost');
   buttonPost.textContent = 'Post';
 
-  // Eventos
+
+  //Eventos
   window.addEventListener('DOMContentLoaded', async () => {
-    const querySnapshot = await getForm();
-    const containerData = document.getElementById('container');
+    const querySnapshot = await getForm()
+    const containerData = document.getElementById('containerData')
 
     let html = '';
-    querySnapshot.forEach((doc) => {
-      const postData = doc.data();
+    querySnapshot.forEach(doc => {
+      const postData = doc.data()
+
       html += `
     <div>
       <h3>${postData.titles}</h3>
       <p>${postData.descriptions}</p>
-    </div> 
-    `;
-    });
-
+    </div>
+    `
+    })
     containerData.innerHTML = html
   });
 
+
   form.addEventListener('submit', (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
-    saveForm(titles.value, descriptions.value);
-    form.reset();
+    saveForm(titles.value, descriptions.value)
+    form.reset()
   });
-
+  
   const logo = document.createElement('img');
   logo.src = '../logo.png';
   logo.classList.add('logoPost');
@@ -61,10 +63,10 @@ export const login = (onNavigate) => {
   const logoUser = document.createElement('img');
   logoUser.src = '../logouser.png';
   logoUser.classList.add('logoUser');
-
+  
   homeDiv.appendChild(buttonHome);
 
-  // homeDiv.appendChild(logo);
+  //homeDiv.appendChild(logo);
   homeDiv.appendChild(form);
   form.appendChild(title);
   form.appendChild(titles);
@@ -72,6 +74,6 @@ export const login = (onNavigate) => {
   form.appendChild(descriptions);
   form.appendChild(buttonPost);
 
-  /* homeDiv.appendChild(logoUser); */
+  /*homeDiv.appendChild(logoUser);*/
   return homeDiv;
 };
