@@ -28,23 +28,43 @@ export const login = (onNavigate) => {
   buttonPost.classList.add('buttonPost');
   buttonPost.textContent = 'Post';
 
+  const container = document.createElement('div');
+  container.id = 'containerData';
+  container.classList.add('containerDataPost');
+
+  const postTitles = document.createElement('h3');
+  postTitles.id = 'postTitles';
+  postTitles.textContent = titles.value;
+
+  const postDescriptions = document.createElement('p');
+  postDescriptions.id = 'postDescriptions';
+  postDescriptions.textContent = descriptions.value;
+
   // Eventos
   window.addEventListener('DOMContentLoaded', async () => {
     const querySnapshot = await getForm();
-    const containerData = document.getElementById('container');
+    const containerData = document.getElementById('containerData');
 
     let html = '';
     querySnapshot.forEach((doc) => {
       const postData = doc.data();
-      html += `
-    <div>
-      <h3>${postData.titles}</h3>
-      <p>${postData.descriptions}</p>
-    </div> 
-    `;
+
+      const containerPost = document.createElement('div');
+      containerPost.classList.add('containerPostview');
+
+      const postTitles = document.createElement('h3');
+      postTitles.id = 'postTitles';
+      postTitles.textContent = postData.titles;
+      containerPost.appendChild(postTitles);
+
+      const postDescriptions = document.createElement('p');
+      postDescriptions.id = 'postDescriptions';
+      postDescriptions.textContent = postData.descriptions;
+      containerPost.appendChild(postDescriptions);
+
+      container.appendChild(containerPost);
     });
 
-    containerData.innerHTML = html
   });
 
   form.addEventListener('submit', (e) => {
@@ -71,6 +91,8 @@ export const login = (onNavigate) => {
   form.appendChild(description);
   form.appendChild(descriptions);
   form.appendChild(buttonPost);
+  homeDiv.appendChild(container)
+
 
   /* homeDiv.appendChild(logoUser); */
   return homeDiv;
