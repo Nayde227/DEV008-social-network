@@ -1,5 +1,6 @@
 // import { async } from "regenerator-runtime";
-import { saveForm, getForm } from '../firebase';
+import { deleteDoc } from 'firebase/firestore';
+import { saveForm, getForm, onGetPost, /*deletePost*/ } from '../firebase';
 
 export const login = (onNavigate) => {
   const homeDiv = document.createElement('div');
@@ -43,12 +44,11 @@ export const login = (onNavigate) => {
   // Eventos
   window.addEventListener('DOMContentLoaded', async () => {
     const querySnapshot = await getForm();
-    const containerData = document.getElementById('containerData');
+    //const containerData = document.getElementById('containerData');
 
-    let html = '';
-    querySnapshot.forEach((doc) => {
+    onGetPost(querySnapshot.forEach((doc) => {
       const postData = doc.data();
-
+      //console.log(doc.id)
       const containerPost = document.createElement('div');
       containerPost.classList.add('containerPostview');
 
@@ -62,8 +62,25 @@ export const login = (onNavigate) => {
       postDescriptions.textContent = postData.descriptions;
       containerPost.appendChild(postDescriptions);
 
+      const buttonDelete = document.createElement('button');
+      buttonDelete.classList.add('bttnDelete');
+      buttonDelete.type = 'delete';
+      buttonDelete.textContent = 'Delete';
+      containerPost.appendChild(buttonDelete);
+
+      const btnsDelete = containerPost.querySelectorAll('.bttnDelete');
+      btnsDelete.forEach(btn => {
+
+        btn.addEventListener('click', ({ target: { dataset } }) => {
+          console.log(doc.id)
+          //deletePost(dataset.id)
+        })
+      })
+
       container.appendChild(containerPost);
-    });
+
+
+    }));
 
   });
 
