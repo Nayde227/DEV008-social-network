@@ -1,6 +1,6 @@
 // import { async } from "regenerator-runtime";
 import { deleteDoc } from 'firebase/firestore';
-import { saveForm, getForm, onGetPost, /*deletePost*/ } from '../firebase';
+import { saveForm, getForm, onGetPost, deletePost } from '../firebase';
 
 export const login = (onNavigate) => {
   const homeDiv = document.createElement('div');
@@ -73,13 +73,11 @@ export const login = (onNavigate) => {
 
         btn.addEventListener('click', ({ target: { dataset } }) => {
           console.log(doc.id)
-          //deletePost(dataset.id)
+          deletePost(doc.id)
         })
       })
 
       container.appendChild(containerPost);
-
-
     }));
 
   });
