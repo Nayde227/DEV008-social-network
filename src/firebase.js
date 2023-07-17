@@ -37,5 +37,5 @@ export const getForm = () => getDocs(collection(db, 'travel-post'));
 
 export const onGetPost = (callback) => onSnapshot(collection(db,'travel-post'),callback);
 
-//export const deletePost = (id) => deleteDoc(doc(db, 'travel-post', id));
+export const deletePost = (id) => deleteDoc(doc(db, 'travel-post', id));
 
