@@ -1,6 +1,6 @@
 // import { async } from "regenerator-runtime";
 import { deleteDoc } from 'firebase/firestore';
-import { saveForm, getForm, onGetPost, deletePost } from '../firebase';
+import { saveForm, getForm, onGetPost, deletePost, editPost } from '../firebase';
 
 export const login = (onNavigate) => {
   const homeDiv = document.createElement('div');
@@ -11,6 +11,7 @@ export const login = (onNavigate) => {
   buttonHome.textContent = 'Log out';
   buttonHome.addEventListener('click', () => onNavigate('/'));
 
+  //Formulario
   const form = document.createElement('form');
   form.classList.add('form');
 
@@ -28,6 +29,8 @@ export const login = (onNavigate) => {
   const buttonPost = document.createElement('button');
   buttonPost.classList.add('buttonPost');
   buttonPost.textContent = 'Post';
+  buttonPost.onclick = 'location.reload()'
+/*----------------------------------------------*/
 
   const container = document.createElement('div');
   container.id = 'containerData';
@@ -62,12 +65,19 @@ export const login = (onNavigate) => {
       postDescriptions.textContent = postData.descriptions;
       containerPost.appendChild(postDescriptions);
 
+      //Boton Delete
       const buttonDelete = document.createElement('button');
       buttonDelete.classList.add('bttnDelete');
       buttonDelete.type = 'delete';
       buttonDelete.textContent = 'Delete';
       containerPost.appendChild(buttonDelete);
-
+      
+      const buttonEdit = document.createElement('button');
+      buttonEdit.classList.add('btnEdit');
+      buttonEdit.type = 'edit';
+      buttonEdit.textContent = 'Edit';
+      containerPost.appendChild(buttonEdit);
+    
       const btnsDelete = containerPost.querySelectorAll('.bttnDelete');
       btnsDelete.forEach(btn => {
 
@@ -77,16 +87,30 @@ export const login = (onNavigate) => {
         })
       })
 
+      
+
+      //Button edit
+      /*const btnsEdit = containerPost.querySelectorAll('.btnEdit');
+      btnsEdit.forEach(btn => {
+
+        btn.addEventListener('click', ())
+      })*/
+
       container.appendChild(containerPost);
     }));
 
   });
 
+  //Button Formulario
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-
-    saveForm(titles.value, descriptions.value);
-    form.reset();
+    
+    if(titles.value === '' || descriptions.value === ''){
+      alert('Complete all fields correctly');
+    } else{
+      saveForm(titles.value, descriptions.value)
+     location.reload()
+    }//form.reset();
   });
 
   const logo = document.createElement('img');
