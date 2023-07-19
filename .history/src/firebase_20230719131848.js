@@ -27,13 +27,15 @@ export function loginUser(email, password) {
   return signInWithEmailAndPassword(auth, email, password);
 }
 
-export const saveForm = (titles, descriptions) => addDoc(collection(db, 'travel-post'), {
-  titles, descriptions,
-});
+export const saveForm = (titles, descriptions) => {
+  addDoc(collection(db, 'travel-post'), {
+    titles, descriptions,
+  });
+};
 
 export const getForm = () => getDocs(collection(db, 'travel-post'));
 
-export const onGetPost = (callback) => onSnapshot(collection(db,'travel-post'), callback);
+export const onGetPost = (callback) => onSnapshot(collection(db,'travel-post'),callback);
 
 export const deletePost = (id) => deleteDoc(doc(db, 'travel-post', id));
 

@@ -25,13 +25,11 @@ export const login = (onNavigate) => {
   title.textContent = 'Title';
   const titles = document.createElement('input');
   titles.placeholder = 'Title';
-  titles.id = 'title';
 
   const description = document.createElement('label');
   description.textContent = 'Description';
   const descriptions = document.createElement('input');
   descriptions.placeholder = 'Description';
-  descriptions.id = 'description';
   description.classList.add('inputDescription');
 
   const buttonPost = document.createElement('button');
@@ -69,16 +67,16 @@ export const login = (onNavigate) => {
         postTitles.textContent = postData.titles;
         containerPost.appendChild(postTitles);
 
-        const postDescriptions = document.createElement('p');
-        postDescriptions.id = 'postDescriptions';
+        const postDescriptions = document.createElement("p");
+        postDescriptions.id = "postDescriptions";
         postDescriptions.textContent = postData.descriptions;
         containerPost.appendChild(postDescriptions);
 
         // Boton Delete
-        const buttonDelete = document.createElement('button');
-        buttonDelete.classList.add('bttnDelete');
-        buttonDelete.type = 'delete';
-        buttonDelete.textContent = 'Delete';
+        const buttonDelete = document.createElement("button");
+        buttonDelete.classList.add("bttnDelete");
+        buttonDelete.type = "delete";
+        buttonDelete.textContent = "Delete";
         containerPost.appendChild(buttonDelete);
 
         const btnsDelete = containerPost.querySelectorAll('.bttnDelete');
@@ -99,14 +97,11 @@ export const login = (onNavigate) => {
         containerPost.appendChild(buttonEdit);
         const btnsEdit = containerPost.querySelectorAll('.btnEdit');
         btnsEdit.forEach((btn) => {
-          btn.addEventListener('click', async ({ target: { dataset } }) => {
+          btn.addEventListener('click', async ({target: { dataset }}) => {
             const edition = await editPost(doc.id);
-            console.log(doc.id);
-            console.log(doc.data().titles);
-            console.log(doc.data().descriptions);
-            document.getElementById('title').value = doc.data().titles;
-            document.getElementById('description').value = doc.data().descriptions;
-            //const edi = doc.data();
+            console.log(doc.data());
+            const edi = doc.data();
+            
           });
         });
         container.appendChild(containerPost);
@@ -128,13 +123,13 @@ export const login = (onNavigate) => {
     }
   });
 
-  const logo = document.createElement('img');
-  logo.src = '../logo.png';
-  logo.classList.add('logoPost');
+  const logo = document.createElement("img");
+  logo.src = "../logo.png";
+  logo.classList.add("logoPost");
 
-  const logoUser = document.createElement('img');
-  logoUser.src = '../logouser.png';
-  logoUser.classList.add('logoUser');
+  const logoUser = document.createElement("img");
+  logoUser.src = "../logouser.png";
+  logoUser.classList.add("logoUser");
 
   homeDiv.appendChild(buttonHome);
 
