@@ -104,8 +104,6 @@ export const login = (onNavigate) => {
             console.log(doc.id);
             console.log(doc.data().titles);
             console.log(doc.data().descriptions);
-            document.getElementById('title').value = doc.data().titles;
-            document.getElementById('description').value = doc.data().descriptions;
             //const edi = doc.data();
           });
         });

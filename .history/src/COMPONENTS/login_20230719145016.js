@@ -25,13 +25,11 @@ export const login = (onNavigate) => {
   title.textContent = 'Title';
   const titles = document.createElement('input');
   titles.placeholder = 'Title';
-  titles.id = 'title';
 
   const description = document.createElement('label');
   description.textContent = 'Description';
   const descriptions = document.createElement('input');
   descriptions.placeholder = 'Description';
-  descriptions.id = 'description';
   description.classList.add('inputDescription');
 
   const buttonPost = document.createElement('button');
@@ -101,16 +99,12 @@ export const login = (onNavigate) => {
         btnsEdit.forEach((btn) => {
           btn.addEventListener('click', async ({ target: { dataset } }) => {
             const edition = await editPost(doc.id);
-            console.log(doc.id);
-            console.log(doc.data().titles);
-            console.log(doc.data().descriptions);
-            document.getElementById('title').value = doc.data().titles;
-            document.getElementById('description').value = doc.data().descriptions;
-            //const edi = doc.data();
+            console.log(doc.data());
+            const edi = doc.data();
           });
         });
         container.appendChild(containerPost);
-      })
+      });
     );
   });
 
