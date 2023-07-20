@@ -87,7 +87,9 @@ export const login = (onNavigate) => {
             // eslint-disable-next-line no-alert
             alert('Your post was permanently deleted');
             console.log(doc.id);
-            deletePost(doc.id);
+            
+            deletePost(doc.id).then(() => {window.location.reload();
+            });
           });
         });
 
