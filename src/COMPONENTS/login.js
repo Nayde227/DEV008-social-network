@@ -6,6 +6,7 @@ import {
   onGetPost,
   deletePost,
   editPost,
+  updatePost
 } from '../firebase';
 
 export const login = (onNavigate) => {
@@ -37,7 +38,9 @@ export const login = (onNavigate) => {
   const buttonPost = document.createElement('button');
   buttonPost.classList.add('buttonPost');
   buttonPost.textContent = 'Post';
-  buttonPost.onclick = 'location.reload()';
+  buttonPost.id = 'update';
+  
+  
   /*----------------------------------------------*/
 
   const container = document.createElement('div');
@@ -51,6 +54,9 @@ export const login = (onNavigate) => {
   const postDescriptions = document.createElement('p');
   postDescriptions.id = 'postDescriptions';
   postDescriptions.textContent = descriptions.value;
+
+  let edi = false;
+  let id = '';
 
   // Eventos
   window.addEventListener('DOMContentLoaded', async () => {
@@ -100,6 +106,7 @@ export const login = (onNavigate) => {
         buttonEdit.textContent = 'Edit';
         containerPost.appendChild(buttonEdit);
         const btnsEdit = containerPost.querySelectorAll('.btnEdit');
+        
         btnsEdit.forEach((btn) => {
           btn.addEventListener('click', async ({ target: { dataset } }) => {
             const edition = await editPost(doc.id);
@@ -108,7 +115,9 @@ export const login = (onNavigate) => {
             console.log(doc.data().descriptions);
             document.getElementById('title').value = doc.data().titles;
             document.getElementById('description').value = doc.data().descriptions;
-            //const edi = doc.data();
+            edi = true;
+            id = (doc.id);
+          
           });
         });
         container.appendChild(containerPost);
@@ -123,12 +132,20 @@ export const login = (onNavigate) => {
     if (titles.value === '' || descriptions.value === '') {
       // eslint-disable-next-line no-alert
       alert('Complete all fields correctly');
-    } else {
+    } 
+    
+    if(!edi){
       saveForm(titles.value, descriptions.value).then(() => {
         window.location.reload();
-      });
-    }
-  });
+      
+  } )} else {
+      updatePost(id, {title: titles.value, description: descriptions.value})
+      edi = false;
+      }form.reset();
+    });
+    
+    
+  
 
   const logo = document.createElement('img');
   logo.src = '../logo.png';
