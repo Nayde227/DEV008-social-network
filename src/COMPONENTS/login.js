@@ -39,8 +39,8 @@ export const login = (onNavigate) => {
   buttonPost.classList.add('buttonPost');
   buttonPost.textContent = 'Post';
   buttonPost.id = 'update';
-  
-  
+
+
   /*----------------------------------------------*/
 
   const container = document.createElement('div');
@@ -93,8 +93,9 @@ export const login = (onNavigate) => {
             // eslint-disable-next-line no-alert
             alert('Your post was permanently deleted');
             console.log(doc.id);
-            
-            deletePost(doc.id).then(() => {window.location.reload();
+
+            deletePost(doc.id).then(() => {
+              window.location.reload();
             });
           });
         });
@@ -106,7 +107,7 @@ export const login = (onNavigate) => {
         buttonEdit.textContent = 'Edit';
         containerPost.appendChild(buttonEdit);
         const btnsEdit = containerPost.querySelectorAll('.btnEdit');
-        
+
         btnsEdit.forEach((btn) => {
           btn.addEventListener('click', async ({ target: { dataset } }) => {
             const edition = await editPost(doc.id);
@@ -115,9 +116,10 @@ export const login = (onNavigate) => {
             console.log(doc.data().descriptions);
             document.getElementById('title').value = doc.data().titles;
             document.getElementById('description').value = doc.data().descriptions;
+
             edi = true;
-            id = (doc.id);
-          
+            id = doc.id;
+
           });
         });
         container.appendChild(containerPost);
@@ -132,20 +134,25 @@ export const login = (onNavigate) => {
     if (titles.value === '' || descriptions.value === '') {
       // eslint-disable-next-line no-alert
       alert('Complete all fields correctly');
-    } 
-    
-    if(!edi){
+    }
+
+    if (!edi) {
       saveForm(titles.value, descriptions.value).then(() => {
         window.location.reload();
-      
-  } )} else {
-      updatePost(id, {title: titles.value, description: descriptions.value})
+      })
+    }
+
+    else {
+      updatePost(id, { titles: titles.value, descriptions: descriptions.value }).then(() => {
+        window.location.reload();
+      })
       edi = false;
-      }form.reset();
-    });
-    
-    
-  
+    }
+    form.reset();
+  });
+
+
+
 
   const logo = document.createElement('img');
   logo.src = '../logo.png';
