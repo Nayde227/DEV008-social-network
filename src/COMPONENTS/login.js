@@ -74,6 +74,8 @@ export const login = (onNavigate) => {
         postTitles.id = 'postTitles';
         postTitles.textContent = postData.titles;
         containerPost.appendChild(postTitles);
+        const userTitle = JSON.parse(localStorage.getItem('user')).email;
+        console.log(userTitle)
 
         const postDescriptions = document.createElement('p');
         postDescriptions.id = 'postDescriptions';
@@ -122,6 +124,7 @@ export const login = (onNavigate) => {
 
           });
         });
+
         container.appendChild(containerPost);
       })
     );
