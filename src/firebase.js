@@ -27,8 +27,8 @@ export function loginUser(email, password) {
   return signInWithEmailAndPassword(auth, email, password);
 }
 
-export const saveForm = (titles, descriptions) => addDoc(collection(db, 'travel-post'), {
-  titles, descriptions,
+export const saveForm = (titles, descriptions, autor) => addDoc(collection(db, 'travel-post'), {
+  titles, descriptions, autor
 });
 
 export const getForm = () => getDocs(collection(db, 'travel-post'));

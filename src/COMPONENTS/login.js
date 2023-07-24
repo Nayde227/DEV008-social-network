@@ -21,15 +21,16 @@ export const login = (onNavigate) => {
   // Formulario
   const form = document.createElement('form');
   form.classList.add('form');
-  const userTitle = JSON.parse(localStorage.getItem('user')).email;
-  
+
   const title = document.createElement('label');
   title.textContent = 'Title';
+
   const titles = document.createElement('input');
   titles.id = 'title';
 
   const description = document.createElement('label');
   description.textContent = 'Description';
+
   const descriptions = document.createElement('input');
   descriptions.placeholder = 'Description';
   descriptions.id = 'description';
@@ -46,6 +47,8 @@ export const login = (onNavigate) => {
   const container = document.createElement('div');
   container.id = 'containerData';
   container.classList.add('containerDataPost');
+
+
 
   const postTitles = document.createElement('h3');
   postTitles.id = 'postTitles';
@@ -66,15 +69,16 @@ export const login = (onNavigate) => {
     onGetPost(
       querySnapshot.forEach((doc) => {
         const postData = doc.data();
-        const userTitle = JSON.parse(localStorage.getItem('user')).email;
-        
+       // const userTitle = JSON.parse(localStorage.getItem('user')).email;
+
         // console.log(doc.id)
         const containerPost = document.createElement('div');
         containerPost.classList.add('containerPostview');
 
-        const titleLabel = document.createElement('h3');
-        titleLabel.textContent = userTitle;
-        containerPost.appendChild(titleLabel);
+        const emailAutor = document.createElement('div');
+        emailAutor.textContent = postData.autor;
+        containerPost.appendChild(emailAutor);
+
 
         const postTitles = document.createElement('h3');
         postTitles.id = 'postTitles';
@@ -137,6 +141,7 @@ export const login = (onNavigate) => {
   // Button Formulario
   form.addEventListener('submit', (e) => {
     e.preventDefault();
+    const userTitle = JSON.parse(localStorage.getItem('user')).email;
 
     if (titles.value === '' || descriptions.value === '') {
       // eslint-disable-next-line no-alert
@@ -144,10 +149,12 @@ export const login = (onNavigate) => {
     }
 
     if (!edi) {
-      saveForm(titles.value, descriptions.value).then(() => {
+      console.log(userTitle)
+      saveForm(titles.value, descriptions.value, userTitle).then(() => {
         window.location.reload();
       })
     }
+
 
     else {
       updatePost(id, { titles: titles.value, descriptions: descriptions.value }).then(() => {
