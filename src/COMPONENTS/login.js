@@ -21,11 +21,11 @@ export const login = (onNavigate) => {
   // Formulario
   const form = document.createElement('form');
   form.classList.add('form');
-
+  const userTitle = JSON.parse(localStorage.getItem('user')).email;
+  
   const title = document.createElement('label');
   title.textContent = 'Title';
   const titles = document.createElement('input');
-  titles.placeholder = 'Title';
   titles.id = 'title';
 
   const description = document.createElement('label');
@@ -66,16 +66,20 @@ export const login = (onNavigate) => {
     onGetPost(
       querySnapshot.forEach((doc) => {
         const postData = doc.data();
+        const userTitle = JSON.parse(localStorage.getItem('user')).email;
+        
         // console.log(doc.id)
         const containerPost = document.createElement('div');
         containerPost.classList.add('containerPostview');
+
+        const titleLabel = document.createElement('h3');
+        titleLabel.textContent = userTitle;
+        containerPost.appendChild(titleLabel);
 
         const postTitles = document.createElement('h3');
         postTitles.id = 'postTitles';
         postTitles.textContent = postData.titles;
         containerPost.appendChild(postTitles);
-        const userTitle = JSON.parse(localStorage.getItem('user')).email;
-        console.log(userTitle)
 
         const postDescriptions = document.createElement('p');
         postDescriptions.id = 'postDescriptions';
