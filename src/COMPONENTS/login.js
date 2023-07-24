@@ -91,14 +91,19 @@ export const login = (onNavigate) => {
         containerPost.appendChild(postDescriptions);
 
         // Boton Delete
+        const userTitle = JSON.parse(localStorage.getItem('user')).email;
+        if (postData.autor === userTitle) {
+        
         const buttonDelete = document.createElement('button');
         buttonDelete.classList.add('bttnDelete');
         buttonDelete.type = 'delete';
         buttonDelete.textContent = 'Delete';
         containerPost.appendChild(buttonDelete);
-
+        
+       
         const btnsDelete = containerPost.querySelectorAll('.bttnDelete');
         btnsDelete.forEach((btn) => {
+          
           btn.addEventListener('click', ({ target: { dataset } }) => {
             // eslint-disable-next-line no-alert
             alert('Your post was permanently deleted');
@@ -106,11 +111,14 @@ export const login = (onNavigate) => {
 
             deletePost(doc.id).then(() => {
               window.location.reload();
+            
             });
           });
         });
+          } 
 
         // Button Edit
+        if (postData.autor === userTitle) {
         const buttonEdit = document.createElement('button');
         buttonEdit.classList.add('btnEdit');
         buttonEdit.type = 'edit';
@@ -132,7 +140,7 @@ export const login = (onNavigate) => {
 
           });
         });
-
+      };
         container.appendChild(containerPost);
       })
     );
