@@ -37,7 +37,12 @@ export const home = (onNavigate) => {
       alert('Complete all fields correctly');
     } else {
       loginUser(inputEmail.value, inputPassword.value)
-        .then((e) => onNavigate('/login'))
+        .then((result) => {
+        let user = result.user;
+        localStorage.setItem('user', JSON.stringify(user));
+        
+        onNavigate('/login')})
+
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
