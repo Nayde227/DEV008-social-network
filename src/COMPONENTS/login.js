@@ -26,6 +26,7 @@ export const login = (onNavigate) => {
   title.textContent = 'Title';
 
   const titles = document.createElement('input');
+  titles.placeholder = 'title';
   titles.id = 'title';
 
   const description = document.createElement('label');
