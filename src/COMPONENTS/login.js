@@ -91,8 +91,35 @@ export const login = (onNavigate) => {
         postDescriptions.textContent = postData.descriptions;
         containerPost.appendChild(postDescriptions);
 
-        // Boton Delete
+        const buttonLike = document.createElement('button');
+        buttonLike.id = 'buttonlike';
+        buttonLike.classList.add('bttnlike');
+        containerPost.appendChild(buttonLike);
+
+        const sumLike = document.createElement('p');
+        sumLike.id = 'sumlikes';
+        sumLike.classList.add('sumLikes');
+        sumLike.textContent = postData.likes.length;
+        containerPost.appendChild(sumLike);
+
         const userTitle = JSON.parse(localStorage.getItem('user')).email;
+        buttonLike.onclick = function() {
+          if(postData.likes.includes(userTitle)){
+            const indice = postData.likes.indexOf(userTitle); // obtenemos el indice
+            postData.likes.splice(indice, 1); // 1 es la cantidad de elemento a eliminar
+          } else {
+            postData.likes.push(userTitle)
+          }
+          updatePost(doc.id, {likes: postData.likes}).then(() => {
+            window.location.reload();
+          
+          });
+          
+        }
+      
+
+        // Boton Delete
+        
         if (postData.autor === userTitle) {
         
         const buttonDelete = document.createElement('button');
