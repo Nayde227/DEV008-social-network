@@ -11,11 +11,17 @@ import {
 
 export const login = (onNavigate) => {
   const homeDiv = document.createElement('div');
+  homeDiv.classList.add('divPadre')
+  
 
-  homeDiv.textContent = 'Welcome to GO!Travel';
+  const welcome = document.createElement('h1');
+  welcome.classList.add('welcome')
+  welcome.textContent = 'Welcome to GO!Travel';
+  homeDiv.appendChild(welcome);
 
   const buttonHome = document.createElement('button');
   buttonHome.textContent = 'Log out';
+  buttonHome.classList.add('buttonHome');
   buttonHome.addEventListener('click', () => onNavigate('/'));
 
   // Formulario
@@ -26,14 +32,14 @@ export const login = (onNavigate) => {
   title.textContent = 'Title';
 
   const titles = document.createElement('input');
-  titles.placeholder = 'title';
+  titles.placeholder = 'Title of your trip...';
   titles.id = 'title';
 
   const description = document.createElement('label');
   description.textContent = 'Description';
 
   const descriptions = document.createElement('input');
-  descriptions.placeholder = 'Description';
+  descriptions.placeholder = 'Describe your trip...';
   descriptions.id = 'description';
   description.classList.add('inputDescription');
 
@@ -94,6 +100,7 @@ export const login = (onNavigate) => {
         const buttonLike = document.createElement('button');
         buttonLike.id = 'buttonlike';
         buttonLike.classList.add('bttnlike');
+        buttonLike.textContent = 'Like';
         containerPost.appendChild(buttonLike);
 
         const sumLike = document.createElement('p');
