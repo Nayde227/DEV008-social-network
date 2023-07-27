@@ -97,17 +97,21 @@ export const login = (onNavigate) => {
         postDescriptions.textContent = postData.descriptions;
         containerPost.appendChild(postDescriptions);
 
+        const containerButton = document.createElement('div')
+        containerButton.classList.add('containerBttn');
+        containerPost.appendChild(containerButton)
+
         const buttonLike = document.createElement('button');
         buttonLike.id = 'buttonlike';
         buttonLike.classList.add('bttnlike');
         buttonLike.textContent = 'Like';
-        containerPost.appendChild(buttonLike);
+        containerButton.appendChild(buttonLike);
 
         const sumLike = document.createElement('p');
         sumLike.id = 'sumlikes';
         sumLike.classList.add('sumLikes');
         sumLike.textContent = postData.likes.length;
-        containerPost.appendChild(sumLike);
+        containerButton.appendChild(sumLike);
 
         const userTitle = JSON.parse(localStorage.getItem('user')).email;
         buttonLike.onclick = function() {
@@ -133,7 +137,7 @@ export const login = (onNavigate) => {
         buttonDelete.classList.add('bttnDelete');
         buttonDelete.type = 'delete';
         buttonDelete.textContent = 'Delete';
-        containerPost.appendChild(buttonDelete);
+        containerButton.appendChild(buttonDelete);
         
        
         const btnsDelete = containerPost.querySelectorAll('.bttnDelete');
@@ -158,7 +162,7 @@ export const login = (onNavigate) => {
         buttonEdit.classList.add('btnEdit');
         buttonEdit.type = 'edit';
         buttonEdit.textContent = 'Edit';
-        containerPost.appendChild(buttonEdit);
+        containerButton.appendChild(buttonEdit);
         const btnsEdit = containerPost.querySelectorAll('.btnEdit');
 
         btnsEdit.forEach((btn) => {
