@@ -24,7 +24,7 @@ export const login = (onNavigate) => {
 
   const welcome = document.createElement('h1');
   welcome.classList.add('welcome')
-  welcome.textContent = 'Welcome to GO!Travel';
+  welcome.textContent = 'Welcome to GO! Travel';
   banner.appendChild(welcome);
 
   const buttonHome = document.createElement('button');
