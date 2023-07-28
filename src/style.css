@@ -3,7 +3,6 @@ html {
     height: 100%;
     background-image: url(viaje4.jpg);
     background-size: 100% 100%;
-    /* background-repeat: no-repeat;*/
     background-attachment: fixed;
     overflow: scroll;
 }
@@ -56,7 +55,7 @@ body {
     background-color: #1FC2D4;
     border: solid 2px black;
     border-radius: 5px;
-    width: 125px;
+    width: 170px;
     height: 36px;
     margin: 20px;
     font-size: 20px;
@@ -69,8 +68,8 @@ body {
 }
 
 .buttonReg {
-    background-color: rgba(111, 147, 163, 0.5);
-    border: solid 2px rgba(111, 147, 163, 0.5);
+    background-color: rgba(111, 147, 163, 0.8);
+    border: solid 1px rgba(111, 147, 163, 0.8);
     font-size: 16px;
     font-style: italic;
     width: 108px;
@@ -96,8 +95,8 @@ body {
 }
 
 .buttonFor {
-    background-color: rgba(111, 147, 163, 0.5);
-    border: solid 2px rgba(111, 147, 163, 0.5);
+    background-color: rgba(111, 147, 163, 0.8);
+    border: solid 1px rgba(111, 147, 163, 0.8);
     font-size: 16px;
     font-style: italic;
     width: 150px;
@@ -142,7 +141,6 @@ body {
 
 .registerHere {
     font-size: 36px;
-    /*font-family: ;*/
     width: 250px;
     height: 46px;
     margin: 0px;
@@ -177,7 +175,6 @@ body {
 
 .forgotYourPassword {
     font-size: 26px;
-    /*font-family: ;*/
     width: 300px;
     height: 46px;
     margin: 2%;
@@ -221,13 +218,11 @@ body {
 .divPadre {
     height: 95%;
     width: 85%;
-
 }
 
 .banner {
     display: flex;
     flex-wrap: wrap;
-    
 }
 
 .logoPost {
@@ -247,25 +242,14 @@ body {
     font-size: 300%;
 }
 
-@media screen and (max-width: 700px) {
-    .welcome {
-        font-size: 195%;
-    }
-    
-    .logoPost{
-        margin-left: 20%;
-    }
-}
-
 .buttonHome {
-    background-color: #8CDBE4;
+    background-color: #f1463a;
     font-size: 1rem;
-    opacity: 85%;
+    opacity: 90%;
     width: 84px;
     height: 29px;
     border-radius: 5px;
     position: relative;
-    margin-top: -50%;
     margin-left: 75%;
     cursor: pointer;
 }
@@ -327,12 +311,6 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-/*@media screen and (min-width: 700px){
- .form{
-    
-    
- }
-}*/
 /*---------Div de los post-----------*/
 .containerDataPost {
     display: flex;
@@ -397,8 +375,38 @@ body {
 }
 
 .sumLikes {
+    width: 8%;
+    height: 10%;
     margin: 1%;
-    padding: 2%;
-    font-size: 1.1rem;
-    font-family: Verdana, Geneva, Tahoma, sans-serif
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+@media screen and (max-width: 700px) {
+    .welcome {
+        font-size: 180%;
+    }
+    .buttonHome {
+        margin-left: 60%;
+    }
+    .logoPost {
+        margin-left: 17%;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .divPadre{
+        width: 62%;
+    }
+    .buttonHome {
+        margin-left: 90%;
+    }
+    .form {
+        width: auto;
+        font-size: 1.3rem;
+    }
+
+    .containerDataPost {
+        width: auto;
+    }
 }

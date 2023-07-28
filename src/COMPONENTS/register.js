@@ -27,7 +27,7 @@ export const register = (onNavigate) => {
   inputEmail.classList.add('inputRegister');
 
   const password = document.createTextNode('Password');
-  const inputPassword = document.createElement('input'); // type pasword checar que no se convierta en **
+  const inputPassword = document.createElement('input');
   inputPassword.type = 'password';
   inputPassword.classList.add('inputRegister');
 
@@ -53,24 +53,20 @@ export const register = (onNavigate) => {
           const errorCode = error.code;
           const errorMessage = error.message;
           if (errorCode === 'auth/email-already-exists') {
-            // eslint-disable-next-line no-alert
             alert('email already exists');
           }
           if (errorCode === 'auth/email-already-in-use') {
-            // eslint-disable-next-line no-alert
             alert('email already in use');
           }
           if (errorCode === 'auth/invalid-email') {
-            // eslint-disable-next-line no-alert
             alert('invalid email');
           }
           console.log(errorCode);
           console.log(errorMessage);
         });
     }
-
-    // console.log("errorprueba");
   });
+
   homeDiv.appendChild(buttonBack);
   homeDiv.appendChild(logo);
   homeDiv.appendChild(registerHere);

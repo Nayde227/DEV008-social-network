@@ -1,7 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
-import { getDocs, collection, addDoc, onSnapshot, doc, deleteDoc, getDoc, updateDoc} from 'firebase/firestore';
+import { getDocs, collection, addDoc, onSnapshot, doc, deleteDoc, getDoc, updateDoc } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBCKCACUtV4KUQBasLm6x0eJnurCNedrIE',
@@ -33,7 +33,7 @@ export const saveForm = (titles, descriptions, autor) => addDoc(collection(db, '
 
 export const getForm = () => getDocs(collection(db, 'travel-post'));
 
-export const onGetPost = (callback) => onSnapshot(collection(db,'travel-post'), callback);
+export const onGetPost = (callback) => onSnapshot(collection(db, 'travel-post'), callback);
 
 export const deletePost = (id) => deleteDoc(doc(db, 'travel-post', id));
 

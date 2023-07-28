@@ -1,4 +1,3 @@
-// import { async } from "regenerator-runtime";
 import { deleteDoc } from 'firebase/firestore';
 import {
   saveForm,
@@ -17,6 +16,11 @@ export const login = (onNavigate) => {
   banner.classList.add('banner');
   homeDiv.appendChild(banner)
 
+  const buttonHome = document.createElement('button');
+  buttonHome.textContent = 'Log out';
+  buttonHome.classList.add('buttonHome');
+  banner.appendChild(buttonHome);
+  
   const logo = document.createElement('img');
   logo.src = '../logo.png';
   logo.classList.add('logoPost');
@@ -27,9 +31,8 @@ export const login = (onNavigate) => {
   welcome.textContent = 'Welcome to GO! Travel';
   banner.appendChild(welcome);
 
-  const buttonHome = document.createElement('button');
-  buttonHome.textContent = 'Log out';
-  buttonHome.classList.add('buttonHome');
+ 
+
   buttonHome.addEventListener('click', () => onNavigate('/'));
 
   // Formulario
@@ -57,7 +60,6 @@ export const login = (onNavigate) => {
   buttonPost.id = 'update';
 
   /*----------------------------------------------*/
-
   const container = document.createElement('div');
   container.id = 'containerData';
   container.classList.add('containerDataPost');
@@ -76,12 +78,10 @@ export const login = (onNavigate) => {
   // Eventos
   window.addEventListener('DOMContentLoaded', async () => {
     const querySnapshot = await getForm();
-
     onGetPost(
       querySnapshot.forEach((doc) => {
         const postData = doc.data();
 
-        // console.log(doc.id)
         const containerPost = document.createElement('div');
         containerPost.classList.add('containerPostview');
 
@@ -103,13 +103,15 @@ export const login = (onNavigate) => {
         containerButton.classList.add('containerBttn');
         containerPost.appendChild(containerButton)
 
+        //botón like
         const buttonLike = document.createElement('button');
         buttonLike.id = 'buttonlike';
         buttonLike.classList.add('bttnlike');
         buttonLike.textContent = 'Like';
         containerButton.appendChild(buttonLike);
 
-        const sumLike = document.createElement('p');
+        //contador de likes
+        const sumLike = document.createElement('button');
         sumLike.id = 'sumlikes';
         sumLike.classList.add('sumLikes');
         sumLike.textContent = postData.likes.length;
@@ -118,19 +120,16 @@ export const login = (onNavigate) => {
         const userTitle = JSON.parse(localStorage.getItem('user')).email;
         buttonLike.onclick = function () {
           if (postData.likes.includes(userTitle)) {
-            const indice = postData.likes.indexOf(userTitle); // obtenemos el indice
-            postData.likes.splice(indice, 1); // 1 es la cantidad de elemento a eliminar
+            const indice = postData.likes.indexOf(userTitle);
+            postData.likes.splice(indice, 1);
           } else {
             postData.likes.push(userTitle)
           }
           updatePost(doc.id, { likes: postData.likes }).then(() => {
             window.location.reload();
-
           });
-
         }
         // Boton Delete
-
         if (postData.autor === userTitle) {
 
           const buttonDelete = document.createElement('button');
@@ -144,7 +143,6 @@ export const login = (onNavigate) => {
           btnsDelete.forEach((btn) => {
 
             btn.addEventListener('click', ({ target: { dataset } }) => {
-              // eslint-disable-next-line no-alert
               alert('Your post was permanently deleted');
               console.log(doc.id);
 
@@ -168,9 +166,6 @@ export const login = (onNavigate) => {
           btnsEdit.forEach((btn) => {
             btn.addEventListener('click', async ({ target: { dataset } }) => {
               const edition = await editPost(doc.id);
-              console.log(doc.id);
-              console.log(doc.data().titles);
-              console.log(doc.data().descriptions);
               document.getElementById('title').value = doc.data().titles;
               document.getElementById('description').value = doc.data().descriptions;
 
@@ -191,7 +186,6 @@ export const login = (onNavigate) => {
     const userTitle = JSON.parse(localStorage.getItem('user')).email;
 
     if (titles.value === '' || descriptions.value === '') {
-      // eslint-disable-next-line no-alert
       alert('Complete all fields correctly')
     }
     else if (!edi) {
@@ -209,11 +203,7 @@ export const login = (onNavigate) => {
     form.reset();
   });
 
-  const logoUser = document.createElement('img');
-  logoUser.src = '../logouser.png';
-  logoUser.classList.add('logoUser');
-
-  homeDiv.appendChild(buttonHome);
+  
   homeDiv.appendChild(form);
   form.appendChild(title);
   form.appendChild(titles);
@@ -222,6 +212,5 @@ export const login = (onNavigate) => {
   form.appendChild(buttonPost);
   homeDiv.appendChild(container);
 
-  /* homeDiv.appendChild(logoUser); */
   return homeDiv;
 };
