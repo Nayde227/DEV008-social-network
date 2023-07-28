@@ -387,7 +387,7 @@ body {
         font-size: 180%;
     }
     .buttonHome {
-        margin-left: 60%;
+        margin-left: 75%;
     }
     .logoPost {
         margin-left: 17%;
@@ -402,6 +402,7 @@ body {
         margin-left: 90%;
     }
     .form {
+        
         width: auto;
         font-size: 1.3rem;
     }
@@ -409,4 +410,14 @@ body {
     .containerDataPost {
         width: auto;
     }
+    
+}
+
+.footer{
+    display: flex;
+    color:aliceblue;
+    font-size: 15px;
+    justify-content: center;
+    width: auto;
+    padding: 2%;
 }

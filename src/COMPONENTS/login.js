@@ -203,7 +203,10 @@ export const login = (onNavigate) => {
     form.reset();
   });
 
-  
+  const footer = document.createElement('footer')
+  footer.classList.add('footer')
+  footer.textContent = '© Copyrigth. All rigths reserved. Go! Travel | Camila Seguel | Alejandra Mendez | Naylimar Alvarez'
+
   homeDiv.appendChild(form);
   form.appendChild(title);
   form.appendChild(titles);
@@ -211,6 +214,7 @@ export const login = (onNavigate) => {
   form.appendChild(descriptions);
   form.appendChild(buttonPost);
   homeDiv.appendChild(container);
+  homeDiv.appendChild(footer);
 
   return homeDiv;
 };
