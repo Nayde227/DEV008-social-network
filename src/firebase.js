@@ -1,7 +1,20 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
-import { getDocs, collection, addDoc, onSnapshot, doc, deleteDoc, getDoc, updateDoc } from 'firebase/firestore';
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from 'firebase/auth';
+import {
+  getFirestore,
+  getDocs,
+  collection,
+  addDoc,
+  onSnapshot,
+  doc,
+  deleteDoc,
+  getDoc,
+  updateDoc,
+} from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBCKCACUtV4KUQBasLm6x0eJnurCNedrIE',
@@ -17,8 +30,6 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-const provider = new GoogleAuthProvider();
-
 export function registerUser(email, password) {
   return createUserWithEmailAndPassword(auth, email, password);
 }
@@ -28,7 +39,7 @@ export function loginUser(email, password) {
 }
 
 export const saveForm = (titles, descriptions, autor) => addDoc(collection(db, 'travel-post'), {
-  titles, descriptions, autor, likes: []
+  titles, descriptions, autor, likes: [],
 });
 
 export const getForm = () => getDocs(collection(db, 'travel-post'));

@@ -37,13 +37,12 @@ export const home = (onNavigate) => {
     } else {
       loginUser(inputEmail.value, inputPassword.value)
         .then((result) => {
-          let user = result.user;
+          const user = result.user;
           localStorage.setItem('user', JSON.stringify(user));
-          onNavigate('/login')
+          onNavigate('/login');
         })
         .catch((error) => {
           const errorCode = error.code;
-          const errorMessage = error.message;
           if (errorCode === 'auth/wrong-password') {
             alert('wrong password');
           }
@@ -53,7 +52,6 @@ export const home = (onNavigate) => {
           if (errorCode === 'auth/invalid-hash-derived-key-length') {
             alert('invalid key length');
           }
-
           if (errorCode === 'auth/user-not-found') {
             alert('user not found');
           }
@@ -76,11 +74,7 @@ export const home = (onNavigate) => {
 
         onNavigate('/login');
       })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        const email = error.customData.email;
-        const credential = GoogleAuthProvider.credentialFromError(error);
+      .catch(() => {
       });
   });
   buttonRegister.addEventListener('click', () => onNavigate('/register'));

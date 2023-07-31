@@ -12,7 +12,7 @@ export const register = (onNavigate) => {
   registerHere.classList.add('registerHere');
 
   buttonBack.textContent = '< Back';
-  buttonBack.addEventListener("click", () => onNavigate('/'));
+  buttonBack.addEventListener('click', () => onNavigate('/'));
 
   const userName = document.createTextNode('Username');
   const inputUser = document.createElement('input');
@@ -46,12 +46,11 @@ export const register = (onNavigate) => {
     } else {
       registerUser(inputEmail.value, inputPassword.value)
         .then(() => {
-          console.log('correctoprueba');
           onNavigate('/');
         })
         .catch((error) => {
           const errorCode = error.code;
-          const errorMessage = error.message;
+
           if (errorCode === 'auth/email-already-exists') {
             alert('email already exists');
           }
@@ -61,8 +60,6 @@ export const register = (onNavigate) => {
           if (errorCode === 'auth/invalid-email') {
             alert('invalid email');
           }
-          console.log(errorCode);
-          console.log(errorMessage);
         });
     }
   });
