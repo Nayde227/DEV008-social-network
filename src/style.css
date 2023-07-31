@@ -18,6 +18,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
+    width: 100%;
 }
 
 .home {
@@ -210,11 +212,6 @@ body {
     margin: 5px;
 }
 
-#root {
-    height: 100%;
-    width: 100%;
-}
-
 .divPadre {
     height: 95%;
     width: 85%;
@@ -244,10 +241,10 @@ body {
 
 .buttonHome {
     background-color: #f1463a;
-    font-size: 1rem;
+    font-size: auto;
     opacity: 90%;
-    width: 84px;
-    height: 29px;
+    width: 20%;
+    height: 15%;
     border-radius: 5px;
     position: relative;
     margin-left: 75%;
@@ -386,23 +383,27 @@ body {
     .welcome {
         font-size: 180%;
     }
+
     .buttonHome {
         margin-left: 75%;
     }
+
     .logoPost {
         margin-left: 17%;
     }
 }
 
 @media screen and (min-width: 700px) {
-    .divPadre{
+    .divPadre {
         width: 62%;
     }
+
     .buttonHome {
         margin-left: 90%;
     }
+
     .form {
-        
+
         width: auto;
         font-size: 1.3rem;
     }
@@ -410,13 +411,13 @@ body {
     .containerDataPost {
         width: auto;
     }
-    
+
 }
 
-.footer{
+.footer {
     display: flex;
-    color:aliceblue;
-    font-size: 15px;
+    color: aliceblue;
+    font-size: auto;
     justify-content: center;
     width: auto;
     padding: 2%;
