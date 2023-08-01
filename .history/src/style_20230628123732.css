@@ -1,0 +1,21 @@
+.buttonLog{
+    background-color: rgb(66, 146, 19);
+}
+body{
+   background-image: url(viajes.jpg);
+   
+}
+
+.buttonHome {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ background-color: #6F93A3;
+
+border-radius: 20px;
+}
+
+.buttonReg {
+    background-color: aqua;
+}
