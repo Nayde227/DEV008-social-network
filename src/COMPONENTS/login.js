@@ -125,24 +125,6 @@ export const login = (onNavigate) => {
         };
 
         if (postData.autor === userTitle) {
-          const buttonDelete = document.createElement('button');
-          buttonDelete.classList.add('bttnDelete');
-          buttonDelete.type = 'delete';
-          buttonDelete.textContent = 'Delete';
-          containerButton.appendChild(buttonDelete);
-
-          const btnsDelete = containerPost.querySelectorAll('.bttnDelete');
-          btnsDelete.forEach((btn) => {
-            btn.addEventListener('click', () => {
-              alert('Your post was permanently deleted');
-
-              deletePost(doc.id).then(() => {
-                window.location.reload();
-              });
-            });
-          });
-        }
-        if (postData.autor === userTitle) {
           const buttonEdit = document.createElement('button');
           buttonEdit.classList.add('btnEdit');
           buttonEdit.type = 'edit';
@@ -158,6 +140,24 @@ export const login = (onNavigate) => {
 
               edi = true;
               id = doc.id;
+            });
+          });
+        }
+        if (postData.autor === userTitle) {
+          const buttonDelete = document.createElement('button');
+          buttonDelete.classList.add('bttnDelete');
+          buttonDelete.type = 'delete';
+          buttonDelete.textContent = 'Delete';
+          containerButton.appendChild(buttonDelete);
+
+          const btnsDelete = containerPost.querySelectorAll('.bttnDelete');
+          btnsDelete.forEach((btn) => {
+            btn.addEventListener('click', () => {
+              alert('Your post was permanently deleted');
+
+              deletePost(doc.id).then(() => {
+                window.location.reload();
+              });
             });
           });
         }

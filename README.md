@@ -4,7 +4,7 @@
 
 * [1. Definición del proyecto](#1-definicion-del-proyecto)
 * [2. Historias de Usuario](#2-historias-de-usuario)
-* [3. Prototipos de baja](#3-prototipos-de-baja-fidelidad)
+* [3. Prototipos de baja fidelidad](#3-prototipos-de-baja-fidelidad)
 * [4. Prototipos de alta fidelidad](#4-prototipos-alta-fidelidad)
 
 ## 1. Definición del proyecto
@@ -18,9 +18,7 @@ Ello de acuerdo con una encuesta de la compañía de investigación De las Heras
 Demotecnia."
 
 - Yo como: Millennials y/o la generación Z que le gusta viajar.
-- Quiero: Una Social Networ que me permita compartir fotos de mis viajes, 
-recomendaciones, y evaluaciones de los lugares a los que voy y a los que los demás 
-han ido. 
+- Quiero: Una Social Network que me permita compartir recomendaciones, y evaluaciones de los lugares a los que voy y a los que los demás han ido. 
 - Para: Para formar parte de una comunidad de viajeros, en la que pueda saber a donde 
 es mejor viajar, los mejores paisajes, etc.
 
@@ -42,16 +40,14 @@ mundo.
 
 Criterios de aceptación:
 1. Poder entrar desde mi móvil o desde mi computador.
-2. Poderme ingresar con mi correo electrónico y constraseña.
-3. Me envíe a otra pagina para registrarme.
-4. Me envíe a otra pagina para recuperar mi contraseña.
-6. Que tenga imágenes.
-7. Que los colores sean armónicos.
-8. Que sea clara la información que pide.
+2. Poder ingresar con mi correo electrónico y contraseña.
+3. Que me dé opciones de registro o recuperar mi contraseña.
+4. Que los colores sean armónicos.
+5. Que sea clara la información que pide.
 
 Definición de Terminado:
 - Que la interfaz se amigable con el usuario, que el usuario pueda acceder con su 
-correo electrónico y contraseña, que me envíe a otra página para crear y recuperar su contraseña.
+correo electrónico y contraseña, que lo envíe a otra página para crear y recuperar su contraseña.
 - Que pueda ingresar desde cualquier dispositivo.
 
 Historia de usuario segunda página (REGISTER)
@@ -65,31 +61,16 @@ Criterios de aceptación
 1. Poder registrarme desde mi móvil o desde mi computador.
 2. Poderme registrarme con mi correo electrónico.
 3. Generar una contraseña que me de seguridad.
-4. Me permita recuperar mi contraseña
-5. Que tenga imágenes.
-6. Que los colores sean armónicos.
-7. Que sea clara la información que pide.
+4. Me permita recuperar mi contraseña.
+5. Que los colores sean armónicos.
+6. Que sea clara la información que pide.
 
 Definición de Terminado
 1. Que la interfaz se amigable con el usuario, que el usuario pueda registrarse con su 
 correo electrónico, que pueda crear y recuperar su contraseña, que pueda ingresar 
 desde cualquier dispositivo.
 
-Historia de usuario tercera página (FORGOT PASSWORD)
-
-- Yo como: Usuario registrado en una Social Network de viajeros por el mundo.
-- Quiero: Poder recuperar mi contraseña de forma segura y rápida.
-- Para: Poder volver a ingresar a mi sesión.
-
-Criterios de aceptación 
-1. Poder generar una nueva contraseña a partir de mi correo electrónico registrado.
-2. Generar una contraseña que me de seguridad.
-
-Definición de Terminado
-1. Que la interfaz se amigable con el usuario, que el usuario pueda crear y recuperar su contraseña.
-2. Que pueda ingresar desde cualquier dispositivo.
-
-Historia de usuario cuarta página (Muro)
+Historia de usuario tercera página (Muro)
 
 - Yo como: Usuario de una social network de viajeros por el mundo.
 - Quiero: Poder hacer post de mis experiencias, recomiendaciones a viajeros.
