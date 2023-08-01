@@ -27,7 +27,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(111, 147, 163, 0.6);
+    background-color: rgba(111, 147, 163, 0.8);
     width: 315px;
     height: 475px;
     margin-top: 150px;
@@ -55,12 +55,12 @@ body {
 
 .buttonLog {
     background-color: #1FC2D4;
-    border: solid 2px black;
+    border: solid 1px black;
     border-radius: 5px;
     width: 170px;
     height: 36px;
-    margin: 20px;
-    font-size: 20px;
+    margin: 10px;
+    font-size: 1rem;
     box-shadow: 7px 7px 7px;
     cursor: pointer;
 }
@@ -71,12 +71,15 @@ body {
 
 .buttonReg {
     background-color: rgba(111, 147, 163, 0.8);
-    border: solid 1px rgba(111, 147, 163, 0.8);
-    font-size: 16px;
+    border: solid 1px #f1f1f1;
+    border-radius: 10px;
+    box-shadow: 7px 7px 7px;
+    font-size: 0.9rem;
     font-style: italic;
     width: 108px;
     height: 21px;
-    margin: 10px;
+    margin: 5px;
+
     cursor: pointer;
 }
 
@@ -87,23 +90,27 @@ body {
     background-position: left;
     background-repeat: no-repeat;
     border-radius: 5px 5px 5px 5px;
-    border: black;
+    border: solid 1px #f1f1f1;
+    box-shadow: 7px 7px 7px;
     padding: 7px;
     width: 170px;
     height: 36px;
-    font-size: 14px;
+    font-size: 0.9rem;
     text-align: right;
     cursor: pointer;
+    margin-bottom: 8%;
 }
 
 .buttonFor {
     background-color: rgba(111, 147, 163, 0.8);
-    border: solid 1px rgba(111, 147, 163, 0.8);
-    font-size: 16px;
+    border: solid 1px #f1f1f1;
+    border-radius: 10px;
+    box-shadow: 7px 7px 7px;
+    font-size: 0.9rem;
     font-style: italic;
     width: 150px;
     height: 21px;
-    margin: 10px;
+    margin: 5px;
     cursor: pointer;
 }
 
@@ -350,22 +357,22 @@ body {
 .bttnDelete {
     width: 25%;
     height: 10%;
-    border-radius: 10px;
+    border-radius: 5px;
     margin: 1%;
-    font-size: 1rem;
-    background: #FACDB7;
+    font-size: auto;
+    background:#f1463a;
     cursor: pointer;
     transition: all 0.3s ease;
     outline: none;
 }
 
 .btnEdit {
-    width: 25%;
+    width: 20%;
     height: 10%;
-    border-radius: 10px;
+    border-radius: 5px;
     margin: 1%;
-    font-size: 1rem;
-    background: #FACDB7;
+    font-size: auto;
+    background: #d4dfe0;
     cursor: pointer;
     transition: all 0.3s ease;
     outline: none;
