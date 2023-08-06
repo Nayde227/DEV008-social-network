@@ -45,7 +45,7 @@ export const login = (onNavigate) => {
   const description = document.createElement('label');
   description.textContent = 'Description';
 
-  const descriptions = document.createElement('input');
+  const descriptions = document.createElement('textarea');
   descriptions.placeholder = 'Describe your trip...';
   descriptions.id = 'description';
   description.classList.add('inputDescription');
@@ -81,9 +81,12 @@ export const login = (onNavigate) => {
         const containerPost = document.createElement('div');
         containerPost.classList.add('containerPostview');
 
-        const emailAutor = document.createElement('div');
+        const emailAutor = document.createElement('h3');
         emailAutor.textContent = postData.autor;
         containerPost.appendChild(emailAutor);
+
+        const lineBar = document.createElement('hr');
+        containerPost.appendChild(lineBar);
 
         const titlesPost = document.createElement('h3');
         titlesPost.id = 'postTitles';
@@ -102,10 +105,10 @@ export const login = (onNavigate) => {
         const buttonLike = document.createElement('button');
         buttonLike.id = 'buttonlike';
         buttonLike.classList.add('bttnlike');
-        buttonLike.textContent = 'Like';
+        
         containerButton.appendChild(buttonLike);
 
-        const sumLike = document.createElement('button');
+        const sumLike = document.createElement('p');
         sumLike.id = 'sumlikes';
         sumLike.classList.add('sumLikes');
         sumLike.textContent = postData.likes.length;
@@ -128,7 +131,7 @@ export const login = (onNavigate) => {
           const buttonEdit = document.createElement('button');
           buttonEdit.classList.add('btnEdit');
           buttonEdit.type = 'edit';
-          buttonEdit.textContent = 'Edit';
+          
           containerButton.appendChild(buttonEdit);
 
           const btnsEdit = containerPost.querySelectorAll('.btnEdit');
@@ -147,7 +150,6 @@ export const login = (onNavigate) => {
           const buttonDelete = document.createElement('button');
           buttonDelete.classList.add('bttnDelete');
           buttonDelete.type = 'delete';
-          buttonDelete.textContent = 'Delete';
           containerButton.appendChild(buttonDelete);
 
           const btnsDelete = containerPost.querySelectorAll('.bttnDelete');
@@ -188,7 +190,7 @@ export const login = (onNavigate) => {
 
   const footer = document.createElement('footer');
   footer.classList.add('footer');
-  footer.textContent = '© Copyrigth. All rigths reserved. Go! Travel | Camila Seguel | Alejandra Mendez | Naylimar Alvarez';
+  footer.textContent = '© Copyrigth. All rigths reserved. Go! Travel  Naylimar Alvarez';
 
   homeDiv.appendChild(form);
   form.appendChild(title);

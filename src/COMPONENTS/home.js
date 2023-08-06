@@ -8,13 +8,13 @@ export const home = (onNavigate) => {
   const buttonLogin = document.createElement('button');
   buttonLogin.classList.add('buttonLog');
 
-  const buttonRegister = document.createElement('button');
+  const buttonRegister = document.createElement('anchor');
   buttonRegister.classList.add('buttonReg');
 
-  const buttonForgot = document.createElement('button');
+  const buttonForgot = document.createElement('anchor');
   buttonForgot.classList.add('buttonFor');
 
-  buttonRegister.textContent = 'Sign Up';
+  buttonRegister.textContent = 'Register here';
   buttonLogin.textContent = 'Sign In';
   buttonForgot.textContent = 'Forgot password?';
 
@@ -87,8 +87,9 @@ export const home = (onNavigate) => {
   homeDiv.appendChild(inputPassword);
   homeDiv.appendChild(buttonLogin);
   homeDiv.appendChild(accessGoogle);
-  homeDiv.appendChild(buttonRegister);
   homeDiv.appendChild(buttonForgot);
+  homeDiv.appendChild(buttonRegister);
+  
 
   return homeDiv;
 };
