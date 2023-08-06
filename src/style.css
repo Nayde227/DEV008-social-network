@@ -28,8 +28,8 @@ body {
     justify-content: center;
     align-items: center;
     background-color: rgba(111, 147, 163, 0.8);
-    width: 315px;
-    height: 475px;
+    width: 50%;
+    height: 42%;
     margin-top: 150px;
     border-radius: 20px;
     font-size: 1.8rem;
@@ -49,8 +49,9 @@ body {
     border-radius: 5px 5px 5px 5px;
     border: solid 2px black;
     background-color: whitesmoke;
-    width: 249px;
-    height: 35px;
+    width: 60%;
+    height: 10%;
+    font-size: 1rem;
 }
 
 .buttonLog {
@@ -92,7 +93,7 @@ body {
     font-size: 0.9rem;
     text-align: right;
     cursor: pointer;
-    margin-bottom: 8%;
+    margin-bottom: 6%;
 }
 .accessGoogle:hover{
     background-color: #d4dfe0;
@@ -211,21 +212,24 @@ body {
 }
 
 .divPadre {
-    height: 95%;
-    width: 95%;
+    height: 100%;
+    width: 90%;
 }
 
 .banner {
     display: flex;
     flex-wrap: wrap;
+    
+    
 }
 
 .logoPost {
     position: relative;
     border-radius: 100%;
-    width: 200px;
-    height: 200px;
+    width: 22%;
+    height: 22%;
     box-shadow: 7px 7px 7px;
+    margin-left: 10%;
 }
 
 .welcome {
@@ -234,17 +238,18 @@ body {
     margin-left: 5%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-style: italic;
-    font-size: 300%;
+    font-size: 350%;
 }
 
 .buttonHome {
     background-color: #f1463a;
     font-size: auto;
-    width: 20%;
-    height: 30%;
+    width: auto;
+    height: 3%;
     border-radius: 5px;
     position: relative;
-    margin-left: 75%;
+    margin-left: 90%;
+    margin-top: 5%;
     cursor: pointer;
 }
 
@@ -370,7 +375,7 @@ body {
     height: 30px;
     border-radius: 5px;
     border:#d4dfe0;
-    margin: 1% 1% 1% 60%;
+    margin: 1% 1% 1% 80%;
     background-image: url(edit_1159633.png);
     background-size: 30px;
     cursor: pointer;
@@ -385,31 +390,59 @@ body {
 }
 
 @media screen and (max-width: 700px) {
+    .home{
+        height: 60%;
+        width: auto;
+    }
+    .logo{
+        margin-top: -150px;
+    }
+    .inputHome{
+        width: 70%;
+        height: 35px;
+    }
+    .banner{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    
     .welcome {
-        font-size: 180%;
+        font-size: 200%;
     }
 
     .buttonHome {
         margin-left: 75%;
+        width: auto;
+        height: 5%;
     }
 
     .logoPost {
-        margin-left: 17%;
+        margin-left: 25%;
+        width: 50%;
+        height: 50%;
+    }
+    .btnEdit{
+        margin-left: 60%;
     }
     
 }
 
-@media screen and (min-width: 700px) {
-    .divPadre {
-        width: 62%;
-    }
-    .home{
-        width: 50%;
-    }
+@media screen and (min-width: 700px) and (max-width: 830px){
+   .home{
+    width:70%;
+    height: 40%;
+   }
     .buttonHome {
-        margin-left: 90%;
+        margin-left: 80%;
+        width: auto;
+        height: 3%;
     }
-    
+    .banner{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     .inputHome {
         border-radius: 5px ;
         border: solid 2px black;
@@ -439,7 +472,11 @@ body {
         width: auto;
     }
     .btnEdit{
-        margin-left: 73%;
+        margin-left: 70%;
+    }
+    .logoPost{
+        height: 30%;
+        width: 30%;
     }
 
 }
