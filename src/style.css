@@ -28,8 +28,8 @@ body {
     justify-content: center;
     align-items: center;
     background-color: rgba(111, 147, 163, 0.8);
-    width: 50%;
-    height: 42%;
+    width:300px; 
+    height:470px; 
     margin-top: 150px;
     border-radius: 20px;
     font-size: 1.8rem;
@@ -37,32 +37,32 @@ body {
 
 .logo {
     display: flex;
-    border-radius: 130px 130px 130px 130px;
-    width: 245px;
-    height: 230px;
+    border-radius: 100% ;
+    width: 70%;
+    height: 40%;
     box-shadow: 7px 7px 7px;
     margin: 20px;
     margin-top: -150px;
 }
 
 .inputHome {
-    border-radius: 5px 5px 5px 5px;
-    border: solid 2px black;
+    border-radius: 7px;
+    border: none;
     background-color: whitesmoke;
-    width: 60%;
-    height: 10%;
+    width: 80%;
+    height: 8%;
     font-size: 1rem;
 }
 
 .buttonLog {
     background-color: #1FC2D4;
-    border: solid 1px black;
+    border: none;
     border-radius: 5px;
-    width: 170px;
-    height: 36px;
-    margin: 10px;
+    width: 60%;
+    height: 7%;
     font-size: 1rem;
     box-shadow: 7px 7px 7px;
+    margin: 5%;
     cursor: pointer;
 }
 
@@ -84,12 +84,12 @@ body {
     background-color: white;
     background-position: left;
     background-repeat: no-repeat;
-    border-radius: 5px 5px 5px 5px;
-    border: solid 1px #f1f1f1;
+    border-radius: 5px;
+    border: none;
     box-shadow: 7px 7px 7px;
     padding: 7px;
-    width: 170px;
-    height: 36px;
+    width: 60%;
+    height: 8%;
     font-size: 0.9rem;
     text-align: right;
     cursor: pointer;
@@ -106,13 +106,18 @@ body {
 .buttonFor:hover{
     color:rgb(6, 6, 135);
 }
+.textHome{
+    font-size: 1.5rem;
+    margin: 2%;
+}
 /*------Página Register----*/
 .inputRegister {
-    border-radius: 5px 5px 5px 5px;
-    border: solid 2px black;
+    border-radius: 7px;
+    border: none;
     background-color: whitesmoke;
-    width: 249px;
-    height: 30px;
+    width: auto;
+    height: 6%;
+    font-size: 1rem;
 }
 
 .logoRegister {
@@ -130,6 +135,7 @@ body {
     width: 84px;
     height: 29px;
     border-radius: 5px;
+    border: none;
     position: fixed;
     margin-top: -730px;
     margin-left: -250px;
@@ -141,16 +147,15 @@ body {
 }
 
 .registerHere {
-    font-size: 36px;
-    width: 250px;
-    height: 46px;
-    margin: 0px;
-    margin-left: 35px;
+    font-size: 30px;
+    margin: 5px;
+    margin-left: 10px;
 }
+
 
 .buttonSingUp {
     background-color: #1FC2D4;
-    border: solid 2px black;
+    border: none;
     border-radius: 5px;
     width: 125px;
     height: 36px;
@@ -167,24 +172,26 @@ body {
 /*------Página Forgot----*/
 .logoForgot {
     display: flex;
-    border-radius: 130px 130px 130px 130px;
-    width: 190px;
-    height: 190px;
+    border-radius: 100%;
+    width: 70%;
+    height: 40%;
     box-shadow: 7px 7px 7px;
     margin-top: -130px;
 }
 
 .forgotYourPassword {
     font-size: 26px;
-    width: 300px;
-    height: 46px;
-    margin: 2%;
-    margin-left: 35px;
+    margin: 5%;
+    margin-left: 10px;
+}
+.textForgot {
+    font-size: 20px;
+    margin: 5px;
 }
 
 .buttonSave {
     background-color: #1FC2D4;
-    border: solid 2px black;
+    border: none;
     border-radius: 5px;
     width: 125px;
     height: 36px;
@@ -199,18 +206,15 @@ body {
 }
 
 .inputForgot {
-    border-radius: 5px 5px 5px 5px;
-    border: solid 2px black;
+    border-radius: 7px;
+    border: none;
     background-color: whitesmoke;
-    width: 249px;
-    height: 30px;
+    width: auto;
+    height: 6%;
+    font-size: 1rem;
 }
 
-.textForgot {
-    font-size: 25px;
-    margin: 5px;
-}
-
+/*---------TimeLine---*/
 .divPadre {
     height: 100%;
     width: 90%;
@@ -224,31 +228,34 @@ body {
 }
 
 .logoPost {
-    position: relative;
-    border-radius: 100%;
-    width: 22%;
-    height: 22%;
+   display: flex;
+   flex-direction: column;
+   border-radius: 100%;
+    width: 60%;
+    height: 50%;
     box-shadow: 7px 7px 7px;
-    margin-left: 10%;
+    margin-left: 20%;
 }
 
 .welcome {
-    position: relative;
+    display: flex;
+    flex-direction: column;
     margin-top: 7%;
     margin-left: 5%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-style: italic;
-    font-size: 350%;
+    font-size: 200%;
 }
 
 .buttonHome {
     background-color: #f1463a;
     font-size: auto;
-    width: auto;
-    height: 3%;
+    width: 20%;
+    height: 4%;
     border-radius: 5px;
+    border: none;
     position: relative;
-    margin-left: 90%;
+    margin-left: 80%;
     margin-top: 5%;
     cursor: pointer;
 }
@@ -278,33 +285,31 @@ body {
     outline: 0;
     padding: 2%;
     background-color: #f1f1f1;
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
     margin-bottom: 15px;
     border-radius: 100px;
+    border: solid 1px black;
 }
 
 #description {
     font-size: 1rem;
     height: auto;
     width: auto;
-    outline: 0;
-    padding: 2%;
     background-color: #f1f1f1;
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+    border: solid 1px black;
     margin-bottom: 15px;
     border-radius: 100px;
 }
 
 .buttonPost {
     width: 25%;
-    height: 20%;
+    height: 25%;
     border-radius: 5px;
     font-size: 1rem;
     background: #1FC2D4;
     margin-left: 35%;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5);
+    border: none;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .buttonPost:hover{
@@ -375,7 +380,7 @@ body {
     height: 30px;
     border-radius: 5px;
     border:#d4dfe0;
-    margin: 1% 1% 1% 80%;
+    margin: 1% 1% 1% 60%;
     background-image: url(edit_1159633.png);
     background-size: 30px;
     cursor: pointer;
@@ -389,18 +394,48 @@ body {
     font-size: 1rem;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (min-width: 1100px) {
     .home{
-        height: 60%;
-        width: auto;
-    }
+        height: 65%;
+        width: 50%;
+    
+}
     .logo{
-        margin-top: -150px;
+        height: 70%;
+        width: 40%;
+        margin-top: -20%;
     }
     .inputHome{
         width: 70%;
-        height: 35px;
+        height: 8%;
+        font-size: 5rem;
     }
+    .buttonLog{
+       
+    width: 25%;
+    height: 40%;
+    font-size: 4rem;
+    margin: 2%
+    
+    }
+    .buttonFor{
+        font-size: 3rem;
+    }
+    .buttonReg{
+        font-size: 3rem;
+    }
+    .accessGoogle{
+    width: 25%;
+    height: 40%;
+    font-size: 4rem;
+    margin-bottom: 1%;
+    
+    }
+    .textHome{
+        font-size: 5rem;
+        margin: 1%
+    }
+    
     .banner{
         display: flex;
         flex-direction: column;
@@ -479,7 +514,7 @@ body {
         width: 30%;
     }
 
-}
+}*/
 
 .footer {
     display: flex;

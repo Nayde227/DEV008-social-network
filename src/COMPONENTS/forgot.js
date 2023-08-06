@@ -5,7 +5,7 @@ export const forgot = (onNavigate) => {
   const buttonBack = document.createElement('button');
   buttonBack.classList.add('buttonBack');
 
-  const forgotYourPassword = document.createElement('h3');
+  const forgotYourPassword = document.createElement('p');
   forgotYourPassword.textContent = 'Forgot your password?';
   forgotYourPassword.classList.add('forgotYourPassword');
 
@@ -23,6 +23,7 @@ export const forgot = (onNavigate) => {
   const writePassword = document.createElement('p');
   writePassword.textContent = 'Write new password';
   writePassword.classList.add('textForgot');
+
   const inputNewPassword = document.createElement('input');
   inputNewPassword.type = 'password';
   inputNewPassword.classList.add('inputForgot');
@@ -30,6 +31,7 @@ export const forgot = (onNavigate) => {
   const confirmPassword = document.createElement('p');
   confirmPassword.textContent = 'Confirm your new password';
   confirmPassword.classList.add('textForgot');
+  
   const inputConfirmPassword = document.createElement('input');
   inputConfirmPassword.type = 'password';
   inputConfirmPassword.classList.add('inputForgot');

@@ -6,27 +6,33 @@ export const home = (onNavigate) => {
   homeDiv.classList.add('home');
 
   const buttonLogin = document.createElement('button');
+  buttonLogin.textContent = 'Sign In';
   buttonLogin.classList.add('buttonLog');
 
   const buttonRegister = document.createElement('anchor');
+  buttonRegister.textContent = 'Register here';
   buttonRegister.classList.add('buttonReg');
 
   const buttonForgot = document.createElement('anchor');
   buttonForgot.classList.add('buttonFor');
-
-  buttonRegister.textContent = 'Register here';
-  buttonLogin.textContent = 'Sign In';
   buttonForgot.textContent = 'Forgot password?';
 
   const inputEmail = document.createElement('input');
   inputEmail.classList.add('inputHome');
   inputEmail.type = 'email';
+  
+  const email = document.createElement('p')
+  email.textContent = 'Email';
+  email.classList.add('textHome');
+
   const inputPassword = document.createElement('input');
   inputPassword.classList.add('inputHome');
   inputPassword.type = 'password';
 
-  const email = document.createTextNode('E-mail');
-  const password = document.createTextNode('Password');
+  const password = document.createElement('p')
+  password.textContent = 'Password';
+  password.classList.add('textHome');
+  
   const logo = document.createElement('img');
   logo.src = '../logo.png';
   logo.classList.add('logo');

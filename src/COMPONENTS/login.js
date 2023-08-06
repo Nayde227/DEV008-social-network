@@ -47,7 +47,7 @@ export const login = (onNavigate) => {
   description.textContent = 'Description';
 
   const descriptions = document.createElement('textarea');
-  descriptions.placeholder = 'Describe your trip...';
+  descriptions.placeholder = ' Describe your trip...';
   descriptions.id = 'description';
   description.classList.add('inputDescription');
 
