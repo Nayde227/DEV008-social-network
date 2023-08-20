@@ -10,14 +10,15 @@ export const login = (onNavigate) => {
   const homeDiv = document.createElement('div');
   homeDiv.classList.add('divPadre');
 
+  const buttonHome = document.createElement('button');
+  buttonHome.textContent = 'Log out';
+  buttonHome.classList.add('buttonHome');
+  homeDiv.appendChild(buttonHome);
+
   const banner = document.createElement('header');
   banner.classList.add('banner');
   homeDiv.appendChild(banner);
 
-  const buttonHome = document.createElement('button');
-  buttonHome.textContent = 'Log out';
-  buttonHome.classList.add('buttonHome');
-  banner.appendChild(buttonHome);
 
   const logo = document.createElement('img');
   logo.src = '../logo.png';
@@ -45,8 +46,8 @@ export const login = (onNavigate) => {
   const description = document.createElement('label');
   description.textContent = 'Description';
 
-  const descriptions = document.createElement('input');
-  descriptions.placeholder = 'Describe your trip...';
+  const descriptions = document.createElement('textarea');
+  descriptions.placeholder = ' Describe your trip...';
   descriptions.id = 'description';
   description.classList.add('inputDescription');
 
@@ -56,9 +57,20 @@ export const login = (onNavigate) => {
   buttonPost.id = 'update';
 
   /*----------------------------------------------*/
+
+  let edi = false;
+  let id = '';
+ 
+
   const container = document.createElement('div');
   container.id = 'containerData';
   container.classList.add('containerDataPost');
+
+  window.addEventListener('DOMContentLoaded', async () => {
+    const querySnapshot = await getForm();
+    onGetPost(
+      querySnapshot.forEach((doc) => {
+        const postData = doc.data();
 
   const postTitles = document.createElement('h3');
   postTitles.id = 'postTitles';
@@ -68,22 +80,19 @@ export const login = (onNavigate) => {
   postDescriptions.id = 'postDescriptions';
   postDescriptions.textContent = descriptions.value;
 
-  let edi = false;
-  let id = '';
 
   // Eventos
-  window.addEventListener('DOMContentLoaded', async () => {
-    const querySnapshot = await getForm();
-    onGetPost(
-      querySnapshot.forEach((doc) => {
-        const postData = doc.data();
+  
 
         const containerPost = document.createElement('div');
         containerPost.classList.add('containerPostview');
 
-        const emailAutor = document.createElement('div');
+        const emailAutor = document.createElement('h3');
         emailAutor.textContent = postData.autor;
         containerPost.appendChild(emailAutor);
+
+        const lineBar = document.createElement('hr');
+        containerPost.appendChild(lineBar);
 
         const titlesPost = document.createElement('h3');
         titlesPost.id = 'postTitles';
@@ -102,10 +111,10 @@ export const login = (onNavigate) => {
         const buttonLike = document.createElement('button');
         buttonLike.id = 'buttonlike';
         buttonLike.classList.add('bttnlike');
-        buttonLike.textContent = 'Like';
+        
         containerButton.appendChild(buttonLike);
 
-        const sumLike = document.createElement('button');
+        const sumLike = document.createElement('p');
         sumLike.id = 'sumlikes';
         sumLike.classList.add('sumLikes');
         sumLike.textContent = postData.likes.length;
@@ -128,7 +137,7 @@ export const login = (onNavigate) => {
           const buttonEdit = document.createElement('button');
           buttonEdit.classList.add('btnEdit');
           buttonEdit.type = 'edit';
-          buttonEdit.textContent = 'Edit';
+          
           containerButton.appendChild(buttonEdit);
 
           const btnsEdit = containerPost.querySelectorAll('.btnEdit');
@@ -147,7 +156,6 @@ export const login = (onNavigate) => {
           const buttonDelete = document.createElement('button');
           buttonDelete.classList.add('bttnDelete');
           buttonDelete.type = 'delete';
-          buttonDelete.textContent = 'Delete';
           containerButton.appendChild(buttonDelete);
 
           const btnsDelete = containerPost.querySelectorAll('.bttnDelete');
@@ -162,33 +170,34 @@ export const login = (onNavigate) => {
           });
         }
         container.appendChild(containerPost);
-      }),
-    );
-  });
+   
+}),
+ // Button Formulario
+ form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const userTitle = JSON.parse(localStorage.getItem('user')).email;
 
-  // Button Formulario
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const userTitle = JSON.parse(localStorage.getItem('user')).email;
+  if (titles.value === '' || descriptions.value === '') {
+    alert('Complete all fields correctly');
+  } else if (!edi) {
+    saveForm(titles.value, descriptions.value, userTitle).then(() => {
+      window.location.reload();
+    });
+  } else {
+    updatePost(id, { titles: titles.value, descriptions: descriptions.value }).then(() => {
+      window.location.reload();
+    });
+    edi = false;
+  }
+  form.reset();
 
-    if (titles.value === '' || descriptions.value === '') {
-      alert('Complete all fields correctly');
-    } else if (!edi) {
-      saveForm(titles.value, descriptions.value, userTitle).then(() => {
-        window.location.reload();
-      });
-    } else {
-      updatePost(id, { titles: titles.value, descriptions: descriptions.value }).then(() => {
-        window.location.reload();
-      });
-      edi = false;
-    }
-    form.reset();
-  });
+})
+  )
+});
 
   const footer = document.createElement('footer');
   footer.classList.add('footer');
-  footer.textContent = '© Copyrigth. All rigths reserved. Go! Travel | Camila Seguel | Alejandra Mendez | Naylimar Alvarez';
+  footer.textContent = '© Copyrigth. All rigths reserved. Go! Travel  Naylimar Alvarez';
 
   homeDiv.appendChild(form);
   form.appendChild(title);
@@ -200,4 +209,5 @@ export const login = (onNavigate) => {
   homeDiv.appendChild(footer);
 
   return homeDiv;
+  
 };
